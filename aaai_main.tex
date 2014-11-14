@@ -115,22 +115,22 @@ greatly appreciated by the children involved.
 
 Research in SDS has shown in the past few years that using Reinforcement Learning (RL) with MDPs for dialog management outperforms older hand-crafted rule-based approaches \cite{frampton2009,young2013pomdp}. Intelligent robotics agent researchers have not yet integrated these results in their dialog systems to our knowledge. Most systems usually involve spoken dialog, and their dialog management usually still relies on hand-crafted methods \cite{morbiniFlores2012,Bickmore2010}. 
 
-% {\color{red}
-% \textbf{FixMe}
-% \begin{enumerate}
-%  \item I think we would need to get references on robot dialog systems in our next version 
-% if we're accepted.
-%  \item We also need to have a reminder description of why is it important to run the dialog system 
-% on the robot.  
-% \end{enumerate}
-% }
+{\color{red}
+\textbf{FixMe}
+\begin{enumerate}
+ \item I think we would need to get references on robot dialog systems in our next version 
+if we're accepted.
+ \item We also need to have a reminder description of why is it important to run the dialog system 
+on the robot.  
+\end{enumerate}
+}
 
 In this paper, we discuss a new mode of delivery - a spoken dialog system coupled with a NAO robot - for health interventions that can help people adopt healthy lifestyles.  The dialog system can deliver brief health interventions (BI), which are short, well structured, one-on-one counseling sessions, focused on specific aspects of problematic lifestyle behavior (e.g. overeating, poor diet, heavy drinking). BIs, which are top ranked out of 87 treatment styles in terms of efficiency \cite{miller2002mesa} and which can be delivered in 3-5 minutes \cite{Moyer2002}, assess a person's problem behavior, and provide advice about ways to eliminate it. 
 
 
 \section*{Approach}
 
-In this section we briefly discuss about the approach that have used to develop the dialog 
+In this section we briefly discuss on the approach that have been used to develop the dialog 
 agent (for more detail discussion, the user is referred to \cite{YASCLL14}) . According to the 
 clinician's guide for conducting brief interventions from the National Institute on Alcohol Abuse 
 and Alcoholism (NIAAA) \cite{national2007helping}, a brief intervention for alcohol-related health 
@@ -142,6 +142,8 @@ dependence}\end{inparaenum}; \item {\em Advising} and assisting the state of the
 the degree of alcohol problem which leads to; \begin{inparaenum} \item advice for {\em at-risk} 
 drinkers; \item and advice for drinkers with alcohol use {\em disorder}. \end{inparaenum} 
 \end{inparaenum}
+
+\subsection*{Dialog structure for brief interventions}
 
 The development of the brief intervention content is based on the guide provided by 
 NIAAA \cite{national2006niaaa}. The goal of the dialog agent is to deliver alcohol screening and 
@@ -178,6 +180,9 @@ questions in a complete session.
 \label{fig:dialog_manager} 
 \end{figure}
 
+\subsection*{Modeling with reinforcement learning}
+
+~
 { \color{red}
 \textbf{FixMe:}
 \begin{enumerate}
