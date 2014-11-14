@@ -67,7 +67,7 @@
 \begin{abstract}
 We combined a spoken dialog system that we developed to deliver brief health interventions with a 
 3D anthropomorphic speech-enabled interface to a fully autonomous humanoid robot (NAO). The dialog 
-system is based on Markov decision processes (MDPs). We use off-policy algorithms in 
+system is based on Markov decision processes (MDPs). We use model free off-policy algorithms in 
 reinforcement learning (RL) with the data  collected from real user interactions to obtain the 
 (near-) optimal policy. The system begins to learn optimal dialog strategies for initiative 
 selection and for the type of confirmations that it uses during the
@@ -143,7 +143,7 @@ the degree of alcohol problem which leads to; \begin{inparaenum} \item advice fo
 drinkers; \item and advice for drinkers with alcohol use {\em disorder}. \end{inparaenum} 
 \end{inparaenum}
 
-\subsection*{Dialog structure for brief interventions}
+\subsection*{Dialog Structure for Brief Interventions}
 
 The development of the brief intervention content is based on the guide provided by 
 NIAAA \cite{national2006niaaa}. The goal of the dialog agent is to deliver alcohol screening and 
@@ -180,16 +180,66 @@ questions in a complete session.
 \label{fig:dialog_manager} 
 \end{figure}
 
-\subsection*{Modeling with reinforcement learning}
+\subsection*{Dialog Systems with Reinforcement Learning}
 
-~
-{ \color{red}
-\textbf{FixMe:}
-\begin{enumerate}
- \item A description of the RL method. 
- \item One simulated dialog example from the robot or 3D character. I prefer from the robot. 
-\end{enumerate}
-}
+The goal of the dialog system is to find a (near-) optimal policy that guides the user to an advice 
+or a treatment state (the filled boxes in Figure \ref{fig:dialog_manager}) in an efficient manner. 
+Model free off-policy algorithms in RL (e.g., Q($\lambda)$ \cite{sutton1998reinforcement}, 
+Greedy-GQ($\lambda$) \cite{maei2010toward}, off policy actor-critic \cite{DegrisWS12}) provide the 
+means to find (near-) optimal dialog  policies by having the agent learn them 
+from real experiences and reward feedbacks. In addition, RL framework provides many advantages over 
+methods such as hand-crafted approaches \cite{lemon2007machine}: \begin{inparaenum}[1)] \item a 
+data-driven automatic development cycle; \item provably optimal or near-optimal dialog policies; 
+\item  a principled mathematical model for action selection; \item  possibilities for generalization 
+to unseen states; and \item reduced development and deployment costs.\end{inparaenum} 
+
+RL framework is an generalization of MDPs \cite{sutton1998reinforcement}. In oder to develop an RL 
+agent, the designer provides the descriptions of the states, actions, and reward functions. As the 
+first step, to avoid the data sparsity problem during learning, the whole system has been 
+divided into 5 RL problems (the filled ovals in Figure \ref{fig:dialog_manager}) and learned its 
+(near-) optimal policy independently. 
+
+A state is described with 5 features with discrete values: \begin{inparaenum}[1)] \item question; 
+\item confidence; \item value; \item grammar; and \item auxiliary. \end{inparaenum} Then each 
+question is mapped to a possible state. According to our definitions, each question will produce 34 
+potential states and some associated states per question have been pruned due to non-reachability. 
+Therefore, the dialog agent uses a total of 578 states to represent the environment states. Each 
+state is associated with 2 actions on based on initiatives and  confirmation types. The reward 
+function has been designed such that to complete each RL problem as minimum number of steps as 
+possible (see \cite{YASCLL14} for more details).  
+
+A rich dialog corpus has been used during the learning process. The corpus is organized turn by 
+turn. Each turn element contains: stage and state information, question asked by the system,  
+initiative type,  best speech recognition, grammar type, semantic value or result of the semantic 
+parser, N-best recognitions with confidence score, reward gained from the question, cumulative 
+reward and sound files. Each XML log file contains sequences of dialog turns for one dialog 
+session (Table \ref{sampleDialog} shows  sample dialogs for each stage). The off-policy model free 
+Q($\lambda$) algorithm has been used to learn the (near-) optimal policy.
+
+\begin{table}
+\caption{Sample Dialog}
+\label{sampleDialog}
+\begin{tabular}{ | p{20mm} | p{10mm} | p{40mm} | } \hline
+    \textbf{Attribute} & \textbf{Values} & \textbf{Description} \\
+    \hline
+    Greet (G) & 0,1 & Whether the system has greeted the user \\
+    \hline
+    Question (Q) & 1,2,3,4 & Which question is being queried \\
+    \hline
+    Confidence (C) & 0,1,2,3, 4,5,6 & 0,1,2 for low, medium, and high confidence of speech 
+recognizer. 3,4 for confirmed or not confirmed. 5 to indicate system is waiting for confirmation. 6 
+is for to indicate system transit to next question without confirmation \\
+    \hline
+  Value (V) & 0,1 & Is the value obtained for current question \\
+  \hline
+  Grammar (Gr) & 0,1 & What type of ASR grammar used, restrictive or dictation (non-restrictive) 
+grammar.  \\
+    \hline
+      Aux (Ax) & 0,1,2 & Multiple purpose attribute. Use to indicate number of ReAsks and semantic 
+valence of the received answer. If it is 0, it indicates, it is not used in that state.  \\
+        \hline
+\end{tabular}
+\end{table}
 
 
 \section*{Implementation} 
@@ -213,20 +263,20 @@ object positions such as the ball or an opponent agent) and cooperation. The sof
 robust and is used as part of the backbone for this research paper.
 
 We ported the dialog manager on one of our NAO robots. The software runs as a single process. The
-dialog manager is connected to another process on the robot that makes use of CMU's Sphinx speech
-recognizer system. We use the pocketsphinx 0.8 system, which is a flexible hidden Markov model-based
-speech recognition system \cite{huggins2006pocketsphinx}. We also use the Sphinx 5.0 english (US)
-standard language model without training or domain specific grammars.  The original dialog system described in \cite{YASCLL14} has a language model and grammars, which we plan to  adapt for the NAO robot in our next system version. A third process is the
-RoboCanes software that can be connected to the dialog. Figure \ref{fig:system} gives an overview of
-the architecture and the three processes. Process 1 runs as a server that is connected to process 2
-via a TCP/IP connection. The robot receives a greeting mechanism  at the beginning of a conversation
-that can be altered when starting again. The NAO robot then uses NAOqi for the Text-To-Speech
-generation, although we have also implemented and tested other systems such as Festival \cite{taylor1998architecture} or eSpeak \cite{eSpeak},
-which would also work. Process 2 then makes use of the RoboCanes framework (the RoboCup agent) which
-is responsible for robot motions and also for the image processing and the audio feedback (no 
-feedback from cameras at the moment yet). The robot then uses pocketsphinx, turns the audio signal
-into text and sends it back to the dialog manager. The timing between processes 1 and 2 are based on 
-turns, process 3 runs with 100 Hz for the joint requests and 30 Hz for both cameras.
+dialog manager is connected to another process on the robot that makes use of Google speech API 
+version 2. The original dialog system described in \cite{YASCLL14} has a language model and 
+grammars, which we plan to  adapt for the NAO robot in our next system version. A third process is 
+the RoboCanes software that can be connected to the dialog. Figure \ref{fig:system} gives an 
+overview of the architecture and the three processes. Process 1 is connected to process 2 Java JNI 
+interface. The robot receives a greeting mechanism  at the beginning of a conversation that can be 
+altered when starting again. The NAO robot then uses NAOqi for the Text-To-Speech generation, 
+although we have also implemented and tested other systems such as Festival 
+\cite{taylor1998architecture} or eSpeak \cite{eSpeak}, which would also work. Process 2 then makes 
+use of the RoboCanes framework (the RoboCup agent) which is responsible for robot motions and also 
+for the image processing and the audio feedback (no feedback from cameras at the moment yet). The 
+robot then uses Google speech API, turns the audio signal into text and sends it back to the dialog 
+manager. The timing between processes 1 and 2 are based on turns, process 3 runs with 100 Hz for the 
+joint requests and 30 Hz for both cameras.
 
 \begin{figure}[!t] 
 \centering 
@@ -249,12 +299,6 @@ diet, overeating, or lack of exercise, among others.  The appeal of the NAO to c
 coach, say, to discuss eating more fruits and vegetables on a daily basis. Our platform 
 provides the additional advantages such as a dialog system for a lack of exercise or  it can 
 also demonstrate physical exercises.
-
-
-\section*{Acknowledgement}
-{\color{red}
-FixMe:
-}
 
 \bibliographystyle{aaai}       
 \bibliography{library}   
