@@ -113,19 +113,24 @@ structure that allowed children to develop a personal relationship with the robo
 Csala and colleagues and Belpaeme and colleague took place in hospitals, and both efforts were
 greatly appreciated by the children involved.
 
-Research in SDS has shown in the past few years that using Reinforcement Learning (RL) with MDPs for dialog management outperforms older hand-crafted rule-based approaches \cite{frampton2009,young2013pomdp}. Intelligent robotics agent researchers have not yet integrated these results in their dialog systems to our knowledge. Most systems usually involve spoken dialog, and their dialog management usually still relies on hand-crafted methods \cite{morbiniFlores2012,Bickmore2010}. 
+Dialog systems can be classified into two main categories based on their dialog management 
+technique, which can be either based on machine learning, or hand-crafted.  Systems based on RL are 
+popular in the SDS community and are reported to work better than hand-crafted ones for  
+speech-enabled systems \cite{young2013pomdp} against noisy speech recognition. 
+Hand-crafted systems, on the other hand, can be divided into three subcategories, with dialog 
+management approaches using finite states \cite{sutton1998CSLU}, plans and inference rules 
+\cite{ferguson1998trips,Bohus2009} or information states. \cite{Traum03}. Intelligent robotics agent 
+researchers have not yet integrated these results in their dialog systems to our knowledge. Most 
+systems usually involve spoken dialog, and their dialog management usually still relies on 
+hand-crafted methods \cite{morbiniFlores2012,Bickmore2010}. 
 
-{\color{red}
-\textbf{FixMe}
-\begin{enumerate}
- \item I think we would need to get references on robot dialog systems in our next version 
-if we're accepted.
- \item We also need to have a reminder description of why is it important to run the dialog system 
-on the robot.  
-\end{enumerate}
-}
-
-In this paper, we discuss a new mode of delivery - a spoken dialog system coupled with a NAO robot - for health interventions that can help people adopt healthy lifestyles.  The dialog system can deliver brief health interventions (BI), which are short, well structured, one-on-one counseling sessions, focused on specific aspects of problematic lifestyle behavior (e.g. overeating, poor diet, heavy drinking). BIs, which are top ranked out of 87 treatment styles in terms of efficiency \cite{miller2002mesa} and which can be delivered in 3-5 minutes \cite{Moyer2002}, assess a person's problem behavior, and provide advice about ways to eliminate it. 
+In this paper, we discuss a new mode of delivery - a spoken dialog system coupled with a NAO robot - 
+for health interventions that can help people adopt healthy lifestyles.  The dialog system can 
+deliver brief health interventions (BI), which are short, well structured, one-on-one counseling 
+sessions, focused on specific aspects of problematic lifestyle behavior (e.g. overeating, poor diet, 
+heavy drinking). BIs, which are top ranked out of 87 treatment styles in terms of efficiency 
+\cite{miller2002mesa} and which can be delivered in 3-5 minutes \cite{Moyer2002}, assess a person's 
+problem behavior, and provide advice about ways to eliminate it. 
 
 
 \section*{Approach}
@@ -216,28 +221,40 @@ reward and sound files. Each XML log file contains sequences of dialog turns for
 session (Table \ref{sampleDialog} shows  sample dialogs for each stage). The off-policy model free 
 Q($\lambda$) algorithm has been used to learn the (near-) optimal policy.
 
-\begin{table}
+\begin{table}[!h]
 \caption{Sample Dialog}
 \label{sampleDialog}
-\begin{tabular}{ | p{20mm} | p{10mm} | p{40mm} | } \hline
-    \textbf{Attribute} & \textbf{Values} & \textbf{Description} \\
+\begin{tabular}{ p{80mm}  } \hline
+    \textbf{Screening} \\
+    Hello, my name is Doctor House. I am a humanoid robot created to have conversations about 
+healthy lifestyle. Today, I am here to talk about drinking to figure out if you have any issues.  
+May I ask you few questions about your drinking? \\
+\bf{\em{Yes, sure you can.}}\\
+Do you sometimes drink beer, wine, or other alcoholic beverages?\\
+\bf{\em{Well yes, I drink wine or beer sometimes!}} \\
+$\ldots$\\
+Ok, thanks for the information you have provided to me about your drinking. Next, I will try to 
+determine some important effects of your drinking. \\
     \hline
-    Greet (G) & 0,1 & Whether the system has greeted the user \\
+    \textbf{Assessing} \\
+    Have you ever taken risks under the influence, such as drinking and driving, operating a motor 
+vehicle, or swimming?\\
+\bf{\em{No I have not.}} \\
+I see, so you are careful to avoid high risk situations after or while having drinks, right?\\
+\bf{\em{Yes, I try to be careful.}} \\
+$\ldots$\\
+Have you had a period when you spent a lot of time drinking? Or being sick or getting over the bad 
+aftereffects of drinking? \\
+\bf{\em{Yes several times.}} \\
     \hline
-    Question (Q) & 1,2,3,4 & Which question is being queried \\
+    \textbf{Advising} \\
+     Thank you very much for all your answers. Now I'd like to just take one or two more minutes of 
+your time. Is that okay? \\
+\bf{\em{Yes, please go ahead.}}\\
+$\ldots$\\
+Thanks for talking with me. I hope you've learned something useful about your drinking pattern.  
+Good bye and let's talk again in 3 months! \\
     \hline
-    Confidence (C) & 0,1,2,3, 4,5,6 & 0,1,2 for low, medium, and high confidence of speech 
-recognizer. 3,4 for confirmed or not confirmed. 5 to indicate system is waiting for confirmation. 6 
-is for to indicate system transit to next question without confirmation \\
-    \hline
-  Value (V) & 0,1 & Is the value obtained for current question \\
-  \hline
-  Grammar (Gr) & 0,1 & What type of ASR grammar used, restrictive or dictation (non-restrictive) 
-grammar.  \\
-    \hline
-      Aux (Ax) & 0,1,2 & Multiple purpose attribute. Use to indicate number of ReAsks and semantic 
-valence of the received answer. If it is 0, it indicates, it is not used in that state.  \\
-        \hline
 \end{tabular}
 \end{table}
 
@@ -252,6 +269,18 @@ interconnected MDPs representing each step or phase of the behavior intervention
 \cite{YASCLL14}. The dialog manager uses domain specific dialog phrases, a tailored grammar for
 this case and a RL engine that learns over time how to address/answer to the user. It has been
 successfully tested with 87 users for the alcohol domain.
+
+\begin{figure}[!t] 
+\centering 
+\includegraphics[width=.49\textwidth]{figures/system} 
+\caption{System Architecture: process 1 contains the dialog manager, process 2 delivers speech from 
+the robot and
+the recognition of the human, whereas process 3 is responsible for motions that accompany the 
+robot's
+speech and listening time.} 
+\label{fig:system} 
+\end{figure}
+
 
 The University of Miami's autonomous robots research group develops methods for both simulated and
 physical agents that act in dynamic, adversarial, and real-time environments. The group uses the
@@ -277,18 +306,6 @@ for the image processing and the audio feedback (no feedback from cameras at the
 robot then uses Google speech API, turns the audio signal into text and sends it back to the dialog 
 manager. The timing between processes 1 and 2 are based on turns, process 3 runs with 100 Hz for the 
 joint requests and 30 Hz for both cameras.
-
-\begin{figure}[!t] 
-\centering 
-\includegraphics[width=.49\textwidth]{figures/system} 
-\caption{System Architecture: process 1 contains the dialog manager, process 2 delivers speech from 
-the robot and
-the recognition of the human, whereas process 3 is responsible for motions that accompany the 
-robot's
-speech and listening time.} 
-\label{fig:system} 
-\end{figure}
-
 
 \section*{Conclusions} 
 
