@@ -32,45 +32,28 @@
 % The file aaai.sty is the style file for AAAI Press 
 % proceedings, working notes, and technical reports.
 %
-\sloppy{
 \title{Spoken Dialog Systems for Health Interventions using Fully Autonomous Humanoid Robots}
-%\author{Saminda Abeyruwan\\
-%University of Miami\\
-%Dept. of Computer Science\\
-%Coral Gables, FL 33146\\ 
-%saminda@cs.miami.edu\\
-%\And  Ramesh Baral\\
-%Florida Int'l University\\
-%Comp. \& Info Science\\
-%Miami, FL 33199 \\
-%rbara012@cis.fiu.edu\\
-%\And Ugan Yasavur\\
-%Florida Int'l University\\
-%Comp. \& Info Science\\
-%Miami, FL 33199 \\
-%uyasa001@cis.fiu.edu\\
-%\And Christine Lisetti\\
-%Florida Int'l University\\
-%Comp. \& Info Science\\
-%Miami, FL 33199 \\
-%lisetti@cis.fiu.edu\\ 
-%\And Ubbo Visser\\
-%University of Miami\\
-%Dept. of Computer Science\\
-%Coral Gables, FL 33146\\
-%visser@cs.miami.edu\\
-}
-
+% \author{{\Large\bf Saminda Abeyruwan} \\ {\Large\bf Andreas Seekircher} \\ {\Large\bf Ubbo Visser}\\
+% University of Miami\\
+% Department of Computer Science\\
+% Coral Gables, FL 33146\\ 
+% \{saminda,aseek,visser\}@cs.miami.edu\\
+% \And  {\Large\bf Ramesh Baral} \\ {\Large\bf Ugan Yasavur} \\ {\Large\bf Christine Lisetti}\\
+% Florida International University\\
+% Computing \& Information Sciences\\
+% Miami, FL 33199 \\
+% \{rbara012,uyasa001,lisetti\}@cis.fiu.edu\\
+% }
 
 
 \maketitle
 \begin{abstract}
-We combined a spoken dialog system that we developed to deliver brief health interventions with a 
-3D anthropomorphic speech-enabled interface to a fully autonomous humanoid robot (NAO). The dialog 
-system is based on Markov decision processes (MDPs). We use model free off-policy algorithms in 
-reinforcement learning (RL) with the data  collected from real user interactions to obtain the 
-(near-) optimal policy. The system begins to learn optimal dialog strategies for initiative 
-selection and for the type of confirmations that it uses during the
+We have combined a spoken dialog system that we have developed to deliver brief health 
+interventions with a 3D anthropomorphic speech-enabled interface to a fully autonomous humanoid 
+robot (NAO). The dialog system is based on Markov decision processes (MDPs). We have used model 
+free off-policy algorithms in reinforcement learning (RL) with a dataset collected from real user 
+interactions to obtain a (near-) optimal policy. The system begins to learn optimal dialog 
+strategies for initiative selection and for the type of confirmations that it uses during the
 interaction. The health intervention framework, delivered by a 3D character instead of the 
 NAO, has already been evaluated, with statistically significant results in terms of task 
 completion, ease of use, and future intention to use the system.  The current spoken dialog system 
@@ -180,12 +163,12 @@ questions in a complete session.
 
 \begin{figure}[!t] 
 \centering 
-\includegraphics[width=.49\textwidth]{figures/dialog_manager_v2} 
+\includegraphics[width=.47\textwidth]{figures/dialog_manager_v2} 
 \caption{Dialog structure for brief interventions.} 
 \label{fig:dialog_manager} 
 \end{figure}
 
-\subsection*{Dialog Systems with Reinforcement Learning}
+\subsection*{Dialog Agent with Reinforcement Learning}
 
 The goal of the dialog system is to find a (near-) optimal policy that guides the user to an advice 
 or a treatment state (the filled boxes in Figure \ref{fig:dialog_manager}) in an efficient manner. 
@@ -209,7 +192,7 @@ A state is described with 5 features with discrete values: \begin{inparaenum}[1)
 question is mapped to a possible state. According to our definitions, each question will produce 34 
 potential states and some associated states per question have been pruned due to non-reachability. 
 Therefore, the dialog agent uses a total of 578 states to represent the environment states. Each 
-state is associated with 2 actions on based on initiatives and  confirmation types. The reward 
+state is associated with 2 actions  based on initiatives and  confirmation types. The reward 
 function has been designed such that to complete each RL problem as minimum number of steps as 
 possible (see \cite{YASCLL14} for more details).  
 
@@ -219,7 +202,7 @@ initiative type,  best speech recognition, grammar type, semantic value or resul
 parser, N-best recognitions with confidence score, reward gained from the question, cumulative 
 reward and sound files. Each XML log file contains sequences of dialog turns for one dialog 
 session (Table \ref{sampleDialog} shows  sample dialogs for each stage). The off-policy model free 
-Q($\lambda$) algorithm has been used to learn the (near-) optimal policy.
+Q($\lambda$) algorithm has been used to learn a (near-) optimal policy.
 
 \begin{table}[!h]
 \caption{Sample Dialog}
@@ -272,7 +255,7 @@ successfully tested with 87 users for the alcohol domain.
 
 \begin{figure}[!t] 
 \centering 
-\includegraphics[width=.49\textwidth]{figures/system} 
+\includegraphics[width=.47\textwidth]{figures/system} 
 \caption{System Architecture: process 1 contains the dialog manager, process 2 delivers speech from 
 the robot and
 the recognition of the human, whereas process 3 is responsible for motions that accompany the 
