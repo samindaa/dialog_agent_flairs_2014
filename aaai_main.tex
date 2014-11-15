@@ -33,17 +33,17 @@
 % proceedings, working notes, and technical reports.
 %
 \title{Spoken Dialog Systems for Health Interventions using Fully Autonomous Humanoid Robots}
-\author{{\Large\bf Saminda Abeyruwan} \\ {\Large\bf Andreas Seekircher} \\ {\Large\bf Ubbo Visser}\\
-University of Miami\\
-Department of Computer Science\\
-Coral Gables, FL 33146\\ 
-\{saminda,aseek,visser\}@cs.miami.edu\\
-\And  {\Large\bf Ramesh Baral} \\ {\Large\bf Ugan Yasavur} \\ {\Large\bf Christine Lisetti}\\
-Florida International University\\
-Computing \& Information Sciences\\
-Miami, FL 33199 \\
-\{rbara012,uyasa001,lisetti\}@cis.fiu.edu\\
-}
+% \author{{\Large\bf Saminda Abeyruwan} \\ {\Large\bf Andreas Seekircher} \\ {\Large\bf Ubbo Visser}\\
+% University of Miami\\
+% Department of Computer Science\\
+% Coral Gables, FL 33146\\ 
+% \{saminda,aseek,visser\}@cs.miami.edu\\
+% \And  {\Large\bf Ramesh Baral} \\ {\Large\bf Ugan Yasavur} \\ {\Large\bf Christine Lisetti}\\
+% Florida International University\\
+% Computing \& Information Sciences\\
+% Miami, FL 33199 \\
+% \{rbara012,uyasa001,lisetti\}@cis.fiu.edu\\
+% }
 
 
 \maketitle
@@ -242,8 +242,9 @@ Good bye and let's talk again in 3 months! \\
 
 \section*{Implementation} 
 
-Our implementation is based on two system designs that were independently
-invented and developed in two different research groups. The FIU Affective Social Computing group developed a dialog manager integrated with a 3D virtual 
+Our implementation is based on two system designs that were 
+invented and developed independently in two different research groups. One  
+group developed a dialog manager integrated with a 3D virtual 
 character.  Our system utilizes the user's natural speech as one input parameter and also uses gaze
 and non-verbal cues for the classification of the user's state. The dialog manager (successfully tested with 87 users) operates with five
 interconnected MDPs, each representing a step of the intervention \cite{YASCLL14}. The dialog 
@@ -261,19 +262,20 @@ facing position.)}
 \label{fig:system} 
 \end{figure}
 
-
-The University of Miami's autonomous robots research group develops methods for both simulated and
-physical agents that act in dynamic, adversarial, and real-time environments. 
+The backbone of the system described in this article was developed by one of our 
+labs\footnote{we anonymized.} for both simulated and
+physical robotic agents that act in dynamic, adversarial, and real-time environments. 
 %The group uses the RoboCup domain as an area of investigation. 
-One  focus is the consideration of agent's
-actions/behavior to make its own decisions 
+%We focus on the  agent's
+%actions/behavior to make its own decisions. 
 %(for the own team agents). 
-The group has developed a fully implemented system (RoboCanes software) using six NAO robots that not only move in the
-mentioned environment on their own, but also have to consider team communication (e.g. for global
-object positions such as the ball or an opponent agent) and cooperation. The software is stable and
-robust and is used as part of the backbone for this research paper.
+The group has developed a fully implemented software system  using NAO robots that not 
+only move autonomously in a given environment but 
+also communicate in real time for cooperation with other NAO team members (in a given game). The 
+software is stable and
+robust and now integrated with the dialog manager.
 
-We ported the dialog manager on one of our NAO robots. The software runs as a single process. The
+The software runs as a single process. The
 dialog manager is connected to another process on the robot that makes use of Google speech API 
 version 2. The original dialog system described in \cite{YASCLL14} has a language model and 
 grammars, which we plan to  adapt for the NAO robot in our next system version. A third process is 
