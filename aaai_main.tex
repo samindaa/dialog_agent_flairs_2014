@@ -48,16 +48,16 @@
 
 \maketitle
 \begin{abstract}
-We have combined a spoken dialog system that we have developed to deliver brief health 
-interventions with a 3D anthropomorphic speech-enabled interface to a fully autonomous humanoid 
-robot (NAO). The dialog system is based on Markov decision processes (MDPs). We have used model 
-free off-policy algorithms in reinforcement learning (RL) with a dataset collected from real user 
-interactions to obtain a (near-) optimal policy. The system begins to learn optimal dialog 
-strategies for initiative selection and for the type of confirmations that it uses during the
-interaction. The health intervention framework, delivered by a 3D character instead of the 
-NAO, has already been evaluated, with statistically significant results in terms of task 
-completion, ease of use, and future intention to use the system.  The current spoken dialog system 
-for the humanoid robot is a novelty and exists so far as a proof of concept.
+We integrated a spoken dialog system that we developed to deliver brief health interventions with a 
+speech-enabled 3D virtual character with a fully autonomous humanoid robot (NAO). The dialog 
+system is based on Markov decision processes (MDPs). We use model free off-policy algorithms in 
+reinforcement learning (RL) with the data  collected from real user interactions to obtain the 
+(near-) optimal policy. The system begins to learn optimal dialog strategies for initiative 
+selection and for the type of confirmations that it uses during the interaction. The health 
+intervention framework, delivered by a 3D character instead of the NAO, has already been evaluated, 
+with statistically significant results in terms of task completion, ease of use, and future 
+intention to use the system.  The current spoken dialog system for the humanoid robot is a novelty 
+and exists so far as a proof of concept.
 \end{abstract}
 
 %Keywords Spoken dialog Systems á Reinforcement Learning á Virtual Agents and Avatars á Behavior
@@ -66,7 +66,7 @@ for the humanoid robot is a novelty and exists so far as a proof of concept.
 \section{Introduction} \label{intro}
 
 %Spoken dialog systems (SDS) and autonomous humanoid robots are emerging fields of research which, {\em together}, could bring a revolution to human-robot interaction as we know it. 
-Latest developments spoken dialog systems (SDS) show complementary progress for the development of  embodied conversational agents (ECA) \cite{YASCLL14}. Yet, very little of
+Latest developments in spoken dialog systems (SDS) show complementary progress for the development of  embodied conversational agents (ECA) \cite{YASCLL14}. Yet, very little of
 this progress has been used for autonomous humanoid robots, which have also recently demonstrated the ability
 to serve in health interventions. The
 humanoid robot NAO specifically has been used in a variety of applications in the health domain (e.g.,
@@ -83,7 +83,7 @@ be tailored for types of disability and skill areas that need to be motivated. A
 been created by Bekele and colleagues. They focus on communication behaviors, in particular
 head-tracking to manifest the robots engagement in the on-going interaction \cite{bekele2013step}.  
 
-There are also several studies involving the humanoid robot NAO. Csala and colleagues, for example,
+Several studies involve the humanoid robot NAO. Csala and colleagues, for example,
 studied the effectiveness of a tele-operated NAO humanoid robot in improving the wellbeing of
 children having undergone marrow-transplants. Although there is no conversation with the user
 involved, the study demonstrated that the NAO robot is well suited for this task due to its small
@@ -93,19 +93,20 @@ robot to both entertain and educate children suffering from diabetes in a hospit
 \cite{belpaeme2012multimodal}. This work is interesting to our approach as it is focused on
 providing high levels of robot autonomy using a natural language interface and a long-term memory
 structure that allowed children to develop a personal relationship with the robot. Both studies by
-Csala and colleagues and Belpaeme and colleague took place in hospitals, and both efforts were
+Csala and colleagues, and Belpaeme and colleagues, took place in hospitals, and both efforts were
 greatly appreciated by the children involved.
 
 Dialog systems can be classified into two main categories based on their dialog management 
 technique, which can be either based on machine learning, or hand-crafted.  Systems based on RL are 
 popular in the SDS community and are reported to work better than hand-crafted ones for  
-speech-enabled systems \cite{young2013pomdp} against noisy speech recognition. 
+speech-enabled systems against noisy speech recognition \cite{young2013pomdp}. 
 Hand-crafted systems, on the other hand, can be divided into three subcategories, with dialog 
 management approaches using finite states \cite{sutton1998CSLU}, plans and inference rules 
 \cite{ferguson1998trips,Bohus2009} or information states. \cite{Traum03}. Intelligent robotics agent 
 researchers have not yet integrated these results in their dialog systems to our knowledge. Most 
 systems usually involve spoken dialog, and their dialog management usually still relies on 
 hand-crafted methods \cite{morbiniFlores2012,Bickmore2010}. 
+% BUT BICKMORE AND MORBINI DON'T WORK ON INTELLIGENT ROBOTICS, ONLY 3D CHARS?
 
 In this paper, we discuss a new mode of delivery - a spoken dialog system coupled with a NAO robot - 
 for health interventions that can help people adopt healthy lifestyles.  The dialog system can 
@@ -118,44 +119,42 @@ problem behavior, and provide advice about ways to eliminate it.
 
 \section*{Approach}
 
-In this section we briefly discuss on the approach that have been used to develop the dialog 
-agent (for more detail discussion, the user is referred to \cite{YASCLL14}) . According to the 
+In this section we briefly discuss the approach used to develop the dialog 
+agent (see \cite{YASCLL14} for more details). According to the 
 clinician's guide for conducting brief interventions from the National Institute on Alcohol Abuse 
 and Alcoholism (NIAAA) \cite{national2007helping}, a brief intervention for alcohol-related health 
 problems can be delivered in three sequential steps (Figure 
 \ref{fig:dialog_manager}): \begin{inparaenum}[1)] \item {\em Screening} about alcohol use; \item 
-{\em Assessing} for alcohol use disorders in two sequential processes; \begin{inparaenum}[a)] \item 
-assessment about alcohol {\em abuse}; and \item assessment about alcohol {\em 
-dependence}\end{inparaenum}; \item {\em Advising} and assisting the state of the user according to 
-the degree of alcohol problem which leads to; \begin{inparaenum} \item advice for {\em at-risk} 
-drinkers; \item and advice for drinkers with alcohol use {\em disorder}. \end{inparaenum} 
+{\em Assessing} for alcohol use disorders in two sequential processes: \begin{inparaenum}[a)] \item 
+assessment of potential alcohol {\em abuse}; and \item assessment  of potential alcohol {\em 
+dependence}\end{inparaenum}; \item {\em Advising} and assisting the patient according to 
+the degree of alcohol problems which leads to: \begin{inparaenum} \item advice for {\em at-risk} 
+drinkers; \item and advice for drinkers with alcohol use {\em disorder} (e.g. coordinate care with specialist). \end{inparaenum} 
 \end{inparaenum}
 
 \subsection*{Dialog Structure for Brief Interventions}
 
 The development of the brief intervention content is based on the guide provided by 
 NIAAA \cite{national2006niaaa}. The goal of the dialog agent is to deliver alcohol screening and 
-brief interventions based on this guide. Each stage contains a set of questions. The screening stage 
-uses 5 questions to access state of the user with respect to alcohol consumption.  If the user 
-expresses that (s)he is not consuming alcohol from time to time, the interaction is gracefully ended 
-by with advice, otherwise, the the dialog continues to the assessing state.  
+brief interventions based on this guide. Each step contains a set of questions. The screening for heavy drinking step 
+uses 5 questions to access the user's {\em alcohol use} or consumption.  If the user 
+expresses that (s)he is not consuming alcohol from time to time, the interaction is  ended gracefully
+ with advice on recommended limits, otherwise, the dialog continues to the {\em alcohol use disorders} assessing step.  
 
-The assessing stage consists of two sequential processes: \begin{inparaenum}[1)] \item the 
-assessment of abuse process, where, there are 4 questions to assess alcohol abuse indicators.  It is 
+The {\em assessment of alcohol use disorder (abuse or dependence)} step consists of two sequential processes: \begin{inparaenum}[1)] \item the 
+{\em assessment of alcohol abuse} sub-step, where, there are 4 questions to assess alcohol abuse indicators.  It is 
 enough to find one indicator of alcohol abuse (e.g., risk of bodily harm, relationship trouble) to 
-move to \item the assessment of dependence process (e.g., keep drinking despite problems, not able 
+move to \item the {\em assessment of alcohol dependence} step   (e.g., keep drinking despite problems, not able 
 to stick to drinking limits). If the system can not find any indicator of abuse with the 4 
-questions, it passes to the dependence process, which has  7 questions to access the users state. 
+questions, it passes to the {\em assessment of alcohol dependence} sub-step, which has  7 questions to access the user's state. 
 \end{inparaenum}
 
-It is enough to detect 3 dependence indicators to transit to advice stage 
-for drinkers with alcohol use disorder.  If the system does not detects 3 dependence 
-indicators, it transits to advice for at-risk drinkers. Therefore, the dialog branches to two 
-separate steps at the end of the assessing stage. In both branches, the system provides information 
-related to the assessment of the system.  If the system assessed that the user has an alcohol use 
-disorder, it refers the user to treatments such as asking  the user if she or he is ready to 
-change, and suggests a goal toward a change of drinking patters, based on the user's readiness. If 
-the user is an at-risk drinker, it gauges his or her readiness to change, and provides feedback and 
+It is enough to detect 3 dependence indicators to transit to the step {\em advice on alcohol use disorder (abuse or dependence)}.  If the system does not detects 3 dependence 
+indicators, it transits to {\em advice for at-risk drinking}. Therefore, the dialog branches to two 
+separate steps at the end of the assessment of alcohol use disorder step. In both branches, the system provides information 
+related to the assessment of the system.  If the system assessed that the user has an {\em alcohol use 
+disorder}, it refers the user to treatment, e.g. refer to an addiction specialist, suggests a drinking goal.  If 
+the system assessed that the user is an {\em at-risk drinker}, it gauges his or her readiness to change, and provides feedback and 
 information about the person's drinking. Therefore in both stages, the system provides factual 
 information about the person's drinking and suggested drinking limits, and asks what is the user's 
 intention to change with a single question.  In total there can be a maximum of 18 different 
@@ -163,7 +162,7 @@ questions in a complete session.
 
 \begin{figure}[!t] 
 \centering 
-\includegraphics[width=.47\textwidth]{figures/dialog_manager_v2} 
+\includegraphics[width=.45\textwidth]{figures/dialog_manager_v2} 
 \caption{Dialog structure for brief interventions.} 
 \label{fig:dialog_manager} 
 \end{figure}
@@ -171,32 +170,31 @@ questions in a complete session.
 \subsection*{Dialog Agent with Reinforcement Learning}
 
 The goal of the dialog system is to find a (near-) optimal policy that guides the user to an advice 
-or a treatment state (the filled boxes in Figure \ref{fig:dialog_manager}) in an efficient manner. 
+or a treatment appropriate to the user's alcohol use (the grey boxes in Figure \ref{fig:dialog_manager}) in an efficient manner. 
 Model free off-policy algorithms in RL (e.g., Q($\lambda)$ \cite{sutton1998reinforcement}, 
 Greedy-GQ($\lambda$) \cite{maei2010toward}, off policy actor-critic \cite{DegrisWS12}) provide the 
-means to find (near-) optimal dialog  policies by having the agent learn them 
-from real experiences and reward feedbacks. In addition, RL framework provides many advantages over 
-methods such as hand-crafted approaches \cite{lemon2007machine}: \begin{inparaenum}[1)] \item a 
+means to find (near-) optimal dialog policies by having the agent learn them 
+from real experiences, and reward feedbacks. In addition, the RL framework provides many advantages over hand-crafted approaches \cite{lemon2007machine}: \begin{inparaenum}[1)] \item a 
 data-driven automatic development cycle; \item provably optimal or near-optimal dialog policies; 
 \item  a principled mathematical model for action selection; \item  possibilities for generalization 
 to unseen states; and \item reduced development and deployment costs.\end{inparaenum} 
 
-RL framework is an generalization of MDPs \cite{sutton1998reinforcement}. In oder to develop an RL 
+The RL framework is an generalization of MDPs \cite{sutton1998reinforcement}. In oder to develop an RL 
 agent, the designer provides the descriptions of the states, actions, and reward functions. As the 
 first step, to avoid the data sparsity problem during learning, the whole system has been 
-divided into 5 RL problems (the filled ovals in Figure \ref{fig:dialog_manager}) and learned its 
-(near-) optimal policy independently. 
+divided into 5 RL problems (the yellow boxes in Figure \ref{fig:dialog_manager}) and learned their 
+(near-) optimal policies independently. 
+%DON'T FOLLOW THIS SENTENCE, DO YOU MEAN 'AND LEARNS..."?. 
 
-A state is described with 5 features with discrete values: \begin{inparaenum}[1)] \item question; 
-\item confidence; \item value; \item grammar; and \item auxiliary. \end{inparaenum} Then each 
+A {\em state} is described with 5 features with discrete values: \begin{inparaenum}[1)] \item type of question (open or closed); 
+\item confidence (of speech recognition); \item value; \item grammar; and \item auxiliary. \end{inparaenum} Each 
 question is mapped to a possible state. According to our definitions, each question will produce 34 
-potential states and some associated states per question have been pruned due to non-reachability. 
-Therefore, the dialog agent uses a total of 578 states to represent the environment states. Each 
-state is associated with 2 actions  based on initiatives and  confirmation types. The reward 
-function has been designed such that to complete each RL problem as minimum number of steps as 
-possible (see \cite{YASCLL14} for more details).  
+potential states (some associated states per question have been pruned due to non-reachability). 
+Therefore, the dialog agent uses a total of 578 states to represent the states of the environment. Each 
+state is associated with 2 actions based on initiative and  confirmation types. The reward 
+function is designed to complete each RL problem with the minimum possible number of steps (see \cite{YASCLL14} for details).  
 
-A rich dialog corpus has been used during the learning process. The corpus is organized turn by 
+A rich dialog corpus was used during the learning process. The corpus is organized turn by 
 turn. Each turn element contains: stage and state information, question asked by the system,  
 initiative type,  best speech recognition, grammar type, semantic value or result of the semantic 
 parser, N-best recognitions with confidence score, reward gained from the question, cumulative 
@@ -205,10 +203,10 @@ session (Table \ref{sampleDialog} shows  sample dialogs for each stage). The off
 Q($\lambda$) algorithm has been used to learn a (near-) optimal policy.
 
 \begin{table}[!h]
-\caption{Sample Dialog}
+\caption{Sample Dialogs for each Intervention Step}
 \label{sampleDialog}
 \begin{tabular}{ p{80mm}  } \hline
-    \textbf{Screening} \\
+    \textbf{Asking about Alcohol Use} \\
     Hello, my name is Doctor House. I am a humanoid robot created to have conversations about 
 healthy lifestyle. Today, I am here to talk about drinking to figure out if you have any issues.  
 May I ask you few questions about your drinking? \\
@@ -219,7 +217,7 @@ $\ldots$\\
 Ok, thanks for the information you have provided to me about your drinking. Next, I will try to 
 determine some important effects of your drinking. \\
     \hline
-    \textbf{Assessing} \\
+    \textbf{Assessing for Alcohol Use Disorders} \\
     Have you ever taken risks under the influence, such as drinking and driving, operating a motor 
 vehicle, or swimming?\\
 \bf{\em{No I have not.}} \\
@@ -244,32 +242,33 @@ Good bye and let's talk again in 3 months! \\
 
 \section*{Implementation} 
 
-Our implementation is based on two system designs that have been
-invented and developed in two different research groups and independently. The FIU Affective Social Computing group has developed a dialog manager that is integrated in a system using a virtual 
-character.  Our system utilizes the users natural speech as one input parameter and also uses gaze
-and non-verbal cues for the classification of the users state. The dialog manager operates with five
-interconnected MDPs representing each step or phase of the behavior intervention 
-\cite{YASCLL14}. The dialog manager uses domain specific dialog phrases, a tailored grammar for
-this case and a RL engine that learns over time how to address/answer to the user. It has been
-successfully tested with 87 users for the alcohol domain.
+Our implementation is based on two system designs that were independently
+invented and developed in two different research groups. The FIU Affective Social Computing group developed a dialog manager integrated with a 3D virtual 
+character.  Our system utilizes the user's natural speech as one input parameter and also uses gaze
+and non-verbal cues for the classification of the user's state. The dialog manager (successfully tested with 87 users) operates with five
+interconnected MDPs, each representing a step of the intervention \cite{YASCLL14}. The dialog 
+manager uses domain specific dialog phrases, with a tailored semantic parser, and a RL agent that 
+learns over time how to address/answer the user. 
 
 \begin{figure}[!t] 
 \centering 
-\includegraphics[width=.47\textwidth]{figures/system} 
-\caption{System Architecture: process 1 contains the dialog manager, process 2 delivers speech from 
-the robot and
-the recognition of the human, whereas process 3 is responsible for motions that accompany the 
-robot's
-speech and listening time.} 
+\includegraphics[width=.46\textwidth]{figures/system} 
+\caption{System Architecture: {\em Process 1} is the dialog manager; {\em Process 2} delivers the 
+robot's spoken utterances and the recognized human's utterances; and {\em Process 3} senses the 
+human's non-verbal cues, and controls the robot's motions for appropriate gestures during the 
+robot's speech and listening time (e.g. tracks user's face and, if user moves, moves to maintain 
+facing position.)} 
 \label{fig:system} 
 \end{figure}
 
 
 The University of Miami's autonomous robots research group develops methods for both simulated and
-physical agents that act in dynamic, adversarial, and real-time environments. The group uses the
-RoboCup domain as an area of investigation. One  focus is on appropriate consideration of agent's
-actions/behavior in order to make own decisions (for the own team agents). The group has developed a
-fully implemented system (RoboCanes software) using six NAO robots that not only move in the
+physical agents that act in dynamic, adversarial, and real-time environments. 
+%The group uses the RoboCup domain as an area of investigation. 
+One  focus is the consideration of agent's
+actions/behavior to make its own decisions 
+%(for the own team agents). 
+The group has developed a fully implemented system (RoboCanes software) using six NAO robots that not only move in the
 mentioned environment on their own, but also have to consider team communication (e.g. for global
 object positions such as the ball or an opponent agent) and cooperation. The software is stable and
 robust and is used as part of the backbone for this research paper.
@@ -279,10 +278,10 @@ dialog manager is connected to another process on the robot that makes use of Go
 version 2. The original dialog system described in \cite{YASCLL14} has a language model and 
 grammars, which we plan to  adapt for the NAO robot in our next system version. A third process is 
 the RoboCanes software that can be connected to the dialog. Figure \ref{fig:system} gives an 
-overview of the architecture and the three processes. Process 1 is connected to process 2 Java JNI 
-interface. The robot receives a greeting mechanism  at the beginning of a conversation that can be 
-altered when starting again. The NAO robot then uses NAOqi for the Text-To-Speech generation, 
-although we have also implemented and tested other systems such as Festival 
+overview of the architecture and the three processes. Process 1 is connected to process 2 using 
+Java JNI interface. The robot receives a greeting mechanism  at the beginning of a conversation that 
+can be altered when starting again. The NAO robot then uses NAOqi for the Text-To-Speech 
+generation, although we have also implemented and tested other systems such as Festival 
 \cite{taylor1998architecture} or eSpeak \cite{eSpeak}, which would also work. Process 2 then makes 
 use of the RoboCanes framework (the RoboCup agent) which is responsible for robot motions and also 
 for the image processing and the audio feedback (no feedback from cameras at the moment yet). The 
