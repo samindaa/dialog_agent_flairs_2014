@@ -182,11 +182,46 @@ to unseen states; and \item reduced development and deployment costs.\end{inpara
 The RL framework is an generalization of MDPs \cite{sutton1998reinforcement}. In oder to develop an RL 
 agent, the designer provides the descriptions of the states, actions, and reward functions. As the 
 first step, to avoid the data sparsity problem during learning, the whole system has been 
-divided into 5 RL problems (the yellow boxes in Figure \ref{fig:dialog_manager}) and learned their 
+divided into 5 RL problems (Figure \ref{fig:5mdpv2}) and learned their 
 (near-) optimal policies independently. 
-%DON'T FOLLOW THIS SENTENCE, DO YOU MEAN 'AND LEARNS..."?. 
+%DON'T FOLLOW THIS SENTENCE, DO YOU MEAN 'AND LEARNS..."?.
 
-A {\em state} is described with 5 features with discrete values: \begin{inparaenum}[1)] \item type of question (open or closed); 
+\begin{figure*}[!t]
+  \centering    
+	\includegraphics[width=1.0\textwidth]{figures/5MDPV2}
+	\caption{Representation of the RL problems.}
+  \label{fig:5mdpv2}
+\end{figure*}
+
+\begin{table}[!ht]
+\caption{State features and its domains for screening about alcohol consumption.}
+\label{FeaturesRepresentation}
+\tabcolsep1mm
+\begin{tabular}{ | p{16mm} | p{13mm} | p{49mm} | } \hline
+    \textbf{Feature} & \textbf{Domain} & \textbf{Description} \\
+    \hline
+    Greeting & 0,1 & Whether the system has greeted the user \\
+    \hline
+    Question & 1,2,3,4 & Which question is being queried \\
+    \hline
+    Confidence & 0,1,2,3, 4,5,6 & 0,1,2 for low, medium, and high confidence of speech 
+recognizer. 3,4 for confirmed or not confirmed. 5 to indicate system is waiting for confirmation. 6 
+is for to indicate system transit to next question without confirmation \\
+    \hline
+  Value & 0,1 & Is the value obtained for current question \\
+  \hline
+  Grammar & 0,1 & What type of ASR grammar used, restrictive or dictation (non-restrictive) 
+grammar.  \\
+    \hline
+      Auxiliary & 0,1,2 & Multiple purpose attribute. Use to indicate number of ReAsks and semantic 
+valence of the received answer. If it is 0, it indicates, it is not used in that state.  \\
+        \hline
+\end{tabular}
+\end{table}
+
+
+A {\em state} is described with 5 features with discrete values (Figure 
+\ref{FeaturesRepresentation}): \begin{inparaenum}[1)] \item type of question (open or closed); 
 \item confidence (of speech recognition); \item value; \item grammar; and \item auxiliary. \end{inparaenum} Each 
 question is mapped to a possible state. According to our definitions, each question will produce 34 
 potential states (some associated states per question have been pruned due to non-reachability). 
@@ -291,6 +326,9 @@ for the image processing and the audio feedback (no feedback from cameras at the
 robot then uses Google speech API, turns the audio signal into text and sends it back to the dialog 
 manager. {\em Process 3} is responsible for coordinating the robot's gestures with its spoken utterances, and uses face tracking to physically follow the user.  The timing between processes 1 and 2 are based on turns, process 3 runs with 100 Hz for the 
 joint requests and 30 Hz for both cameras.
+
+\section*{Evauations}
+FixMe:
 
 \section*{Conclusions} 
 
