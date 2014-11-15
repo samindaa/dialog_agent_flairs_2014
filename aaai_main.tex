@@ -245,12 +245,12 @@ Good bye and let's talk again in 3 months! \\
 Our implementation is based on two system designs that were 
 invented and developed independently in two different research groups. One  
 group developed a dialog manager integrated with a 3D virtual 
-character.  Our system utilizes the user's natural speech as one input parameter and also uses gaze
+character.  The system utilizes the user's natural speech as one input parameter and also uses gaze
 and non-verbal cues to adapt to the user's social cues. The dialog manager (successfully 
 tested with 87 users) operates with five
 interconnected MDPs, each representing a step of the intervention \cite{YASCLL14}. The dialog 
 manager uses domain specific dialog phrases, with a tailored semantic parser, and a RL agent that 
-learns over time how to address/answer the user. 
+learns over time how to address and answer the user. 
 
 \begin{figure}[!t] 
 \centering 
@@ -264,32 +264,32 @@ facing position.)}
 \end{figure}
 
 The backbone of the system described in this article was developed by one of our 
-labs\footnote{we anonymized.} for both simulated and
-physical robotic agents that act in dynamic, adversarial, and real-time environments. 
+labs\footnote{We anonymized.} for both simulated and
+physical robotic agents that act in dynamic, adversarial, and real-time environments.    
 %The group uses the RoboCup domain as an area of investigation. 
 %We focus on the  agent's
 %actions/behavior to make its own decisions. 
 %(for the own team agents). 
 The group has developed a fully implemented software system  using NAO robots that not 
-only move autonomously in a given environment but 
-also communicate in real time for cooperation with other NAO team members (in a given game). The 
+only move and walk autonomously in a given environment but 
+also communicate in real time with other NAOs. The 
 software is stable and
-robust and now integrated with the dialog manager.
+robust and is now integrated with the dialog manager.
 
 The software runs as a single process. The
 dialog manager is connected to another process on the robot that makes use of Google speech API 
-version 2. The original dialog system described in \cite{YASCLL14} has a language model and 
-grammars, which we plan to  adapt for the NAO robot in our next system version. A third process is 
-the RoboCanes software that can be connected to the dialog. Figure \ref{fig:system} gives an 
-overview of the architecture and the three processes. Process 1 is connected to process 2 using 
-Java JNI interface. The robot receives a greeting mechanism  at the beginning of a conversation that 
-can be altered when starting again. The NAO robot then uses NAOqi for the Text-To-Speech 
+version 2. 
+%The original dialog system described in \cite{YASCLL14} has a language model and grammars, which we plan to  adapt to execute the functions more efficiently on the NAO robot. 
+A third process is 
+the agent software that can be connected to the dialog. Figure \ref{fig:system} gives an 
+overview of the architecture and the three processes. {\em Process 1} is connected to {\em Process 2} using 
+Java JNI interface.  The NAO robot then uses NAOqi for the Text-To-Speech 
 generation, although we have also implemented and tested other systems such as Festival 
-\cite{taylor1998architecture} or eSpeak \cite{eSpeak}, which would also work. Process 2 then makes 
-use of the RoboCanes framework (the RoboCup agent) which is responsible for robot motions and also 
+\cite{taylor1998architecture} or eSpeak \cite{eSpeak}, which  also work. {\em Process 2} then makes 
+use of the lab agent framework which is responsible for robot motions and 
 for the image processing and the audio feedback (no feedback from cameras at the moment yet). The 
 robot then uses Google speech API, turns the audio signal into text and sends it back to the dialog 
-manager. The timing between processes 1 and 2 are based on turns, process 3 runs with 100 Hz for the 
+manager. {\em Process 3} is responsible for coordinating the robot's gestures with its spoken utterances, and uses face tracking to physically follow the user.  The timing between processes 1 and 2 are based on turns, process 3 runs with 100 Hz for the 
 joint requests and 30 Hz for both cameras.
 
 \section*{Conclusions} 
@@ -299,8 +299,7 @@ likable and effective mode of delivery for brief interventions for target behavi
 diet, overeating, or lack of exercise, among others.  The appeal of the NAO to children 
 \cite{belpaeme2012multimodal} makes it particularly suitable to become a child's favorite health 
 coach, say, to discuss eating more fruits and vegetables on a daily basis. Our platform 
-provides the additional advantages such as a dialog system for a lack of exercise or  it can 
-also demonstrate physical exercises.
+provides the additional advantages such the ability to physically demonstrate physical exercises, when the target behavior of the brief intervention is lack of exercise.
 
 \bibliographystyle{aaai}       
 \bibliography{library}   
