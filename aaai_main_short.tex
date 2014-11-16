@@ -29,6 +29,7 @@
 /Author (Put All Your Authors Here, Separated by Commas)}
 \setcounter{secnumdepth}{0}  
  \begin{document}
+ \begin{sloppy}
 % The file aaai.sty is the style file for AAAI Press 
 % proceedings, working notes, and technical reports.
 %
@@ -99,7 +100,7 @@ greatly appreciated by the children involved.
 Dialog systems can be classified into two main categories based on their dialog management 
 technique, which can be either based on machine learning, or hand-crafted.  Systems based on RL are 
 popular in the SDS community and are reported to work better than hand-crafted ones for  
-speech-enabled systems against noisy speech recognition \cite{young2013pomdp}. 
+speech-enabled systems against noisy speech recognition \cite{NjFunSingh02,young2013pomdp}. 
 Hand-crafted systems, on the other hand, can be divided into three subcategories, with dialog 
 management approaches using finite states \cite{sutton1998CSLU}, plans and inference rules 
 \cite{ferguson1998trips,Bohus2009} or information states. \cite{Traum03}. Intelligent robotics agent 
@@ -117,7 +118,7 @@ heavy drinking). BIs, which are top ranked out of 87 treatment styles in terms o
 problem behavior, and provide advice about ways to eliminate it. 
 
 
-\section*{Approach}
+\section{Approach}
 
 In this section we briefly discuss the approach used to develop the dialog 
 agent (see \cite{YASCLL14} for more details). According to the 
@@ -132,7 +133,7 @@ the degree of alcohol problems which leads to: \begin{inparaenum} \item advice f
 drinkers; \item and advice for drinkers with alcohol use {\em disorder} (e.g. coordinate care with specialist). \end{inparaenum} 
 \end{inparaenum}
 
-\subsection*{Dialog Structure for Brief Interventions}
+\subsection{Dialog Structure for Brief Interventions}
 
 The development of the brief intervention content is based on the guide provided by 
 NIAAA \cite{national2006niaaa}. The goal of the dialog agent is to deliver alcohol screening and 
@@ -167,7 +168,7 @@ questions in a complete session.
 \label{fig:dialog_manager} 
 \end{figure}
 
-\subsection*{Dialog Agent with Reinforcement Learning}
+\subsection{Dialog Agent with Reinforcement Learning}
 
 The goal of the dialog system is to find a (near-) optimal policy that guides the user to an advice 
 or a treatment appropriate to the user's alcohol use (the grey boxes in Figure \ref{fig:dialog_manager}) in an efficient manner. 
@@ -191,7 +192,8 @@ A {\em state} is described with 5 features with discrete values: \begin{inparaen
 question is mapped to a possible state. According to our definitions, each question will produce 34 
 potential states (some associated states per question have been pruned due to non-reachability). 
 Therefore, the dialog agent uses a total of 578 states to represent the states of the environment. Each 
-state is associated with 2 actions based on initiative and  confirmation types. The reward 
+state is associated with 2 {\em actions} based on initiative and  confirmation types. The 
+{\em reward} 
 function is designed to complete each RL problem with the minimum possible number of steps (see \cite{YASCLL14} for details).  
 
 A rich dialog corpus was used during the learning process. The corpus is organized turn by 
@@ -240,7 +242,7 @@ Good bye and let's talk again in 3 months! \\
 \end{table}
 
 
-\section*{Implementation} 
+\section{Implementation} 
 
 Our implementation is based on two system designs that were 
 invented and developed independently in two different research groups. One  
@@ -292,7 +294,7 @@ robot then uses Google speech API, turns the audio signal into text and sends it
 manager. {\em Process 3} is responsible for coordinating the robot's gestures with its spoken utterances, and uses face tracking to physically follow the user.  The timing between processes 1 and 2 are based on turns, process 3 runs with 100 Hz for the 
 joint requests and 30 Hz for both cameras.
 
-\section*{Conclusions} 
+\section{Conclusions} 
 
 Although currently at the prototype stage, we anticipate that the NAO robot will become a very 
 likable and effective mode of delivery for brief interventions for target behaviors such as poor 
@@ -304,5 +306,5 @@ provides the additional advantages such the ability to physically demonstrate ph
 \bibliographystyle{aaai}       
 \bibliography{library}   
 
-
+\end{sloppy}
 \end{document}
