@@ -71,8 +71,8 @@ intention to use the system.  The current spoken dialog system for the humanoid 
 Latest developments in spoken dialog systems (SDS) show complementary progress for the development of  embodied conversational agents (ECA) \cite{YASCLL14}. Yet, very little of
 this progress has been used for autonomous humanoid robots, which have also recently demonstrated the ability
 to serve in health interventions. The
-humanoid robot NAO specifically has been used in a variety of applications in the health domain e.g.,
-\cite{MAJA13}, including user studies which demonstrate the usefulness of the NAO platform.
+humanoid robot NAO specifically has been used in a variety of applications in the health domain (e.g.,
+\cite{MAJA13}), including user studies which demonstrate the usefulness of the NAO platform.
 
 Dahl and Boulos (2013) \nocite{robotics3010001} gave a recent overview of how {\bf robots are used in
 healthcare}. Apart from the  surgical robots that are tele-operated by a human doctor, robots support
@@ -85,7 +85,7 @@ be tailored for types of disability and skill areas that need to be motivated. A
 been created by Bekele and colleagues. They focus on communication behaviors, in particular
 head-tracking to manifest the robots engagement in the on-going interaction \cite{bekele2013step}.  
 
-Several studies involve the {bf humanoid robot NAO}. Csala and colleagues, for example,
+Several studies involve the {\bf humanoid robot NAO}. Csala and colleagues, for example,
 studied the effectiveness of a tele-operated NAO humanoid robot in improving the wellbeing of
 children having undergone marrow-transplants. Although there is no conversation with the user
 involved, the study demonstrated that the NAO robot is well suited for this task due to its small
@@ -187,12 +187,11 @@ data-driven automatic development cycle; \item provably optimal or near-optimal 
 \item  a principled mathematical model for action selection; \item  possibilities for generalization 
 to unseen states; and \item reduced development and deployment costs.\end{inparaenum} 
 
-The RL framework is an generalization of MDPs \cite{sutton1998reinforcement}. In oder to develop an RL 
+The {\bf Reinforcement Learning framework} is a generalization of MDPs \cite{sutton1998reinforcement}. In oder to develop a RL 
 agent, the designer provides the descriptions of the states, actions, and reward functions. As the 
-first step, to avoid the data sparsity problem during learning, the whole system has been 
-divided into 5 RL problems (Figure \ref{fig:5mdpv2}) and learned their 
+first step, to avoid the data sparsity problem during learning,we
+divided  the whole system into 5 RL problems (Figure \ref{fig:5mdpv2}) and learned their 
 (near-) optimal policies independently. 
-%DON'T FOLLOW THIS SENTENCE, DO YOU MEAN 'AND LEARNS..."?.
 
 \begin{figure*}[!t]
   \centering    
@@ -221,8 +220,8 @@ divided into 5 RL problems (Figure \ref{fig:5mdpv2}) and learned their
 \end{table}
 
 
-A {\em state} is described with 5 features with discrete values (Figure 
-\ref{FeaturesRepresentation}): \begin{inparaenum}[1)] \item type of question (open or closed); 
+A {\em state} is described with 5 features with discrete values (shown in Table 
+\ref{FeaturesRepresentation}): \begin{inparaenum}[1)] \item question; 
 \item confidence (of speech recognition); \item value; \item grammar; and \item auxiliary. \end{inparaenum} Each 
 question is mapped to a possible state. According to our definitions, each question will produce 34 
 potential states (some associated states per question have been pruned due to non-reachability). 
@@ -230,13 +229,13 @@ Therefore, the dialog agent uses a total of 578 states to represent the states o
 state is associated with 2 actions based on initiative and  confirmation types. The reward 
 function is designed to complete each RL problem with the minimum possible number of steps (see \cite{YASCLL14} for details).  
 
-A rich dialog corpus that we collected was used during the learning process. The corpus is organized turn by 
+A {\bf rich dialog corpus} that we collected was used during the learning process. The corpus is organized turn by 
 turn. Each turn element contains: stage and state information, question asked by the system,  
 initiative type,  best speech recognition, grammar type, semantic value or result of the semantic 
 parser, N-best recognitions with confidence score, reward gained from the question, cumulative 
 reward and sound files. Each XML log file contains sequences of dialog turns for one dialog 
 session (Table \ref{sampleDialog} shows  sample dialogs for each stage). The off-policy model free 
-Q($\lambda$) algorithm has been used to learn a (near-) optimal policy.
+Q($\lambda$) algorithm was used to learn a (near-) optimal policy.
 
 \begin{table}[!h]
 \caption{Sample Dialogs for each Intervention Step}
@@ -280,10 +279,10 @@ Good bye and let's talk again in 3 months! \\
 
 Our implementation is based on two system designs that were 
 invented and developed independently in two different research groups. One  
-group developed a dialog manager integrated with a 3D virtual 
+group developed the dialog manager integrated with a 3D virtual 
 character.  The system utilizes the user's natural speech as one input parameter and also uses gaze
 and non-verbal cues to adapt to the user's social cues. The dialog manager (successfully 
-tested with 87 users) operates with five
+tested with 89 users) operates with five
 interconnected MDPs, each representing a step of the intervention \cite{YASCLL14}. The dialog 
 manager uses domain specific dialog phrases, with a tailored semantic parser, and a RL agent that 
 learns over time how to address and answer the user. 
@@ -300,7 +299,7 @@ facing position.)}
 \end{figure}
 
 The backbone of the system described in this article was developed by one of our 
-labs\footnote{We anonymized.} for both simulated and
+labs,\footnote{We anonymized.} for both simulated and
 physical robotic agents that act in dynamic, adversarial, and real-time environments.    
 %The group uses the RoboCup domain as an area of investigation. 
 %We focus on the  agent's
@@ -325,7 +324,7 @@ generation, although we have also implemented and tested other systems such as F
 use of the lab agent framework which is responsible for robot motions and 
 for the image processing and the audio feedback (no feedback from cameras at the moment yet). The 
 robot then uses Google speech API, turns the audio signal into text and sends it back to the dialog 
-manager. {\em Process 3} is responsible for coordinating the robot's gestures with its spoken utterances, and uses face tracking to physically follow the user.  The timing between processes 1 and 2 are based on turns, process 3 runs with 100 Hz for the 
+manager. {\em Process 3} is responsible for coordinating the robot's gestures with its spoken utterances, and uses face tracking to physically follow the user.  The timing between Processes 1 and 2 are based on turns, whereas Process 3 runs with 100 Hz for the 
 joint requests and 30 Hz for both cameras.
 
 \section*{Dialog System Evaluation}
@@ -334,11 +333,11 @@ Evaluating dialog systems requires two types of evaluation: 1) {\em objective ev
 
 Because the only difference between the current robot-based dialog system and the 3D character-based dialog system \cite{YASCLL14} is that the former uses the Google speech recognition whereas the latter uses the Microsoft speech recognition engine, the results of performance of the dialog system (when it is delivered by the 3D virtual character) provide an indication of what can be expected of the performance of the same dialog system when it is delivered by the NAO.  As discussed in the Conclusion and Future Work Section, our next step will be to use the exact same procedure as the one described below, to evaluate the robot-based dialog intervention.
 
-{\bf Procedure.}  For the evaluation of the system delivered by the 3D virtual character, 89 subjects were recruited from volunteer university students through fliers and emails.  From 89 participants, 62 of them were males and 27 of them were females; 51 of them were native speakers and 38 of them were non-native speakers,   which realistically represents the diversity of the population in the Miami, Florida area.
+{\bf Participants.} For the evaluation of the system delivered by the 3D virtual character, 89 subjects were recruited from volunteer university students through fliers and emails.  From 89 participants, 62 of them were males and 27 of them were females; 51 of them were native speakers and 38 of them were non-native speakers,   which realistically represents the diversity of the population in the Miami, Florida area.
 
 University students represents a very appropriate sample for target population for brief interventions. The latest report of NIAAA on college drinking indicated that alcohol problems are very prevalent among college students \cite{NIAAA2007colleges}, and 19\% of college students (ages 18-24) meet the criteria for alcohol abuse or dependence\footnote{From the Diagnostic and Statistical Manual of Mental Disorders, Fourth Edition (DSM–IV), American Psychiatric Association.}. The use of brief interventions with college students to educate students about drinking and  increase their awareness is very common \cite{NIAAA2007colleges}. As a result of many studies, the NIAAA report on college drinking emphasized that ``increased alcohol screening and brief interventions are feasible  and appropriate for identifying and addressing harmful drinking among college students". 
 
-Participants sat in front of a PC computer running the systems (some the training system and some the testing system as described below), and responded in English to the questions asked by the embodied conversational agent.  The computer was equipped with a USB sound card and a Sennheiser ME 3-ew microphone.
+{\bf Procedure.} Participants sat in front of a PC computer running the systems (some the training system and some the testing system as described below), and responded in English to the questions asked by the embodied conversational agent.  The computer was equipped with a USB sound card and a Sennheiser ME 3-ew microphone.
 
 It is important to note that we did {\em not} perform any user training nor speaker adaptation for speech recognition. 
 
@@ -346,7 +345,7 @@ After obtaining an oral consent approved by the University Internal Review Board
 \begin{compactitem}
 \item You will be asked questions about your drinking behavior with an avatar/virtual character.  You may or may not have any alcohol related problems, but we just want you to role-play a person who is having drinking-related problems and give relevant answers to each question.
 \item Try to speak clearly and loudly enough.
-\item Wait until the avatar stops speaking before you answer.
+\item Wait until the avatar stops speaking before you answer.\\
 \end{compactitem} 
 
 
@@ -364,18 +363,20 @@ We show the improvement of Q-values for each episode in Figure \ref{q-values}. W
  \end{figure}
 
 
-{\bf Subjective Evaluation}. After the subjects completed the intervention, the subjects answered a survey aimed at evaluating the user's experience with the system. The survey has two parts, the first part has 4 yes/no questions and the second part is a 34-item questionnaire about the subject's assessment and experience with the system. 
+{\bf Subjective Evaluation}. After the subjects completed the intervention, the subjects answered a survey aimed at evaluating the user's experience with the system. 
+%The survey has two parts, the first part has 4 yes/no questions and the second part is a 34-item questionnaire about the subject's assessment and experience with the system. 
 
-In the first part, we asked questions about reuse ``Would you use the system in future?", and ease of use ``Is the system easy to use and is it easy to understand how to use the system?", and ``Did the system understood what you said" and ``Did you know what to say to the system in each turn".
+%In the first part, 
+We asked questions about reuse ``Would you use the system in future?", and ease of use ``Is the system easy to use and is it easy to understand how to use the system?", and ``Did the system understood what you said" and ``Did you know what to say to the system in each turn".
 
 Our evaluation of the subjective aspects  
 %shown in Figure \ref{yesNoEva} 
 demonstrated that acceptability of the system by users is very high in terms of {\em Ease of Use} (81 yes / 8 no), and {\em Intention to Reuse} (63 yes / 26 no)
 % DISCUSS ACTUAL NUMBERS, ADD UNIT IN FIGURE FOR Y AXIS, SAME FOR OTHER FIG BY THE WAY)
 % NOT CLEAR HOW INTENTION TO REUSE WAS EVALUATED THOUGH, WHAT QUESTION(S)?
-the system. The answers to {\em What to say to system?} revealed that sometimes users do not know how to answer the system questions: it might be that when in user initiative mode, i.e. asking open questions, users may not be sure to what extend they can provide details. This suggests the need for the agent to initially brief the user about its language understanding abilities.
+the system. The answers to {\em What to say to system?} revealed that sometimes users do not know how to answer the system questions: it might be that when in user initiative mode, i.e. when the system asks open questions, users may not be sure to what extend they can provide details. This suggests the need for the agent to initially brief the user about its language understanding abilities at the beginning of the conversation.
 % DISCUSS: WHY DO YOU THINK THAT IS?  THE QUESTIONS WERE PRETTY SIMPLE, WHY DIDN'T THEY KNOW HOW TO ANSWER?
-The {\em System understood} criterion indicated that most of the users think that the system understood what they said, which we explain by the system ample use of confirmation questions when it is unsure it understood. 
+The {\em System understood} criterion indicated that most of the users think that the system understood what they said.  This suggests that the system ample use of confirmation questions when it is unsure it understood, helps reassure users they have been understood.
 
 \begin{figure}
  \centering
@@ -388,7 +389,7 @@ The {\em System understood} criterion indicated that most of the users think tha
 
 \section*{Conclusion and Future Work} 
 
-We have implemented a computerized spoken brief intervention that can be delivered by a speech-enabled 3D virtual character and a NAO robot.  We anticipate that the positive results of the speech-enabled 3D character delivering the intervention will be reproduced when we next evaluate the NAO delivering the intervention.
+We have implemented a computerized brief intervention that can be delivered by a speech-enabled 3D virtual character and a NAO robot.  We anticipate that the positive results of the speech-enabled 3D character delivering the intervention will be reproduced when we next evaluate the NAO delivering the intervention.
 
 Furthermore, brief interventions have a single and simple structure that can be adapted to a variety of target behaviors, such as poor diet, overeating, or lack of exercise, among others \cite{Moyer2002}.
 The appeal of the NAO to children 
