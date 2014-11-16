@@ -28,7 +28,7 @@
 /Title (Insert Your Title Here)
 /Author (Put All Your Authors Here, Separated by Commas)}
 \setcounter{secnumdepth}{0}  
-\renewcommand{\arraystretch}{1.3} % General space between rows (1 standard)
+\renewcommand{\arraystretch}{1.2} % General space between rows (1 standard)
 
 
  \begin{document}
@@ -125,12 +125,19 @@ agent (see \cite{YASCLL14} for more details). According to the
 clinician's guide for conducting brief interventions from the National Institute on Alcohol Abuse 
 and Alcoholism (NIAAA) \cite{national2007helping}, a brief intervention for alcohol-related health 
 problems can be delivered in three sequential steps (Figure 
-\ref{fig:dialog_manager}): \begin{inparaenum}[1)] \item {\em Screening} about alcohol {\em use}; \item 
-{\em Assessing} for alcohol use disorders in two sequential processes: \begin{inparaenum}[a)] \item 
-assessment of potential alcohol {\em abuse}; and \item assessment  of potential alcohol {\em 
-dependence}\end{inparaenum}; \item {\em Advising} and assisting the patient according to 
-the degree of alcohol problems which leads to: \begin{inparaenum} \item advice for {\em at-risk} 
-drinkers; \item and advice for drinkers with alcohol use {\em disorder} (e.g. coordinate care with specialist). \end{inparaenum} 
+\ref{fig:dialog_manager}): 
+\begin{inparaenum}[1)] 
+\item {\em Screening} about alcohol {\em use}; 
+\item {\em Assessing} for alcohol use disorders in two sequential processes: 
+  \begin{inparaenum}[a)] 
+    \item assessment of potential alcohol {\em abuse}; and 
+    \item assessment  of potential alcohol {\em dependence}
+  \end{inparaenum}; 
+\item {\em Advising} and assisting the patient according to the degree of alcohol problems which leads to: 
+  \begin{inparaenum} 
+    \item advice for {\em at-risk} drinkers; 
+    \item and advice for drinkers with alcohol use {\em disorder} (e.g. coordinate care with specialist).
+  \end{inparaenum} 
 \end{inparaenum}
 
 \subsection*{Dialog Structure for Brief Interventions}
@@ -141,12 +148,15 @@ brief interventions based on this guide. Each step contains a set of questions. 
 uses 5 questions to assess the user's {\em alcohol use} or consumption.  If the user 
 expresses that (s)he is not consuming alcohol, the interaction is  ended gracefully with advice on recommended limits; otherwise, the dialog continues to the {\em Assessing for Alcohol Use Disorders Step}, see (Figure \ref{fig:dialog_manager}).
 
-The {\em Assessing for Alcohol Use Disorders Step} (i.e. assessing {\em abuse} or {\em dependence}) consists of two sequential sub-steps: \begin{inparaenum}[1)] \item the 
-{\em Assessing Alcohol Abuse} sub-step, which has 4 questions to assess alcohol {\em abuse} indicators (e.g., risk of bodily harm, relationship trouble); one indicator is enough to establish alcohol {\em abuse}.  In either case, the system then moves to: \item the {\em Assessing Alcohol Dependence} sub-step, 
+The {\em Assessing for Alcohol Use Disorders Step} (i.e. assessing {\em abuse} or {\em dependence}) consists of two sequential sub-steps: 
+\begin{inparaenum}[1)] 
+\item the {\em Assessing Alcohol Abuse} sub-step, which has 4 questions to assess alcohol {\em abuse} indicators (e.g., risk of bodily harm, relationship trouble); one indicator is enough to establish alcohol {\em abuse}.  In either case, the system then moves to: 
+\item the {\em Assessing Alcohol Dependence} sub-step, 
 %three or more indicators indicate {\em dependence}.\end{inparaenum}
 %The {\em Assessing Alcohol Dependence sub-Step} 
 which has  7 questions to access the user's potential dependence (e.g., keep drinking despite problems, not able to stick to drinking limits); it is enough to detect 3 dependence indicators to transit to the {\em Advising on Alcohol Use Disorder Step} (i.e. abuse or dependence).  If the system does not detects 3 dependence 
 indicators, it transits to the {\em Advising on At-risk Drinking}. 
+\end{inparaenum}
 
 Therefore, the dialog system branches to two 
 separate steps at the end of the {\em Assessing for Alcohol Use Disorders Step}. In both branches, the system provides information 
@@ -186,7 +196,7 @@ divided into 5 RL problems (Figure \ref{fig:5mdpv2}) and learned their
 
 \begin{figure*}[!t]
   \centering    
-	\includegraphics[width=1.0\textwidth]{figures/5MDPV2}
+	\includegraphics[width=0.9\textwidth]{figures/5MDPV2}
 	\caption{Representation of the RL problems.}
   \label{fig:5mdpv2}
 \end{figure*}
@@ -194,26 +204,19 @@ divided into 5 RL problems (Figure \ref{fig:5mdpv2}) and learned their
 \begin{table}[!ht]
 \caption{State features and its domains for screening about alcohol consumption.}
 \label{FeaturesRepresentation}
-\tabcolsep1mm
-\begin{tabular}{ | p{16mm} | p{13mm} | p{49mm} | } \hline
-    \textbf{Feature} & \textbf{Domain} & \textbf{Description} \\
-    \hline
-    Greeting & 0,1 & Whether the system has greeted the user \\
-    \hline
-    Question & 1,2,3,4 & Which question is being queried \\
-    \hline
-    Confidence & 0,1,2,3, 4,5,6 & 0,1,2 for low, medium, and high confidence of speech 
-recognizer. 3,4 for confirmed or not confirmed. 5 to indicate system is waiting for confirmation. 6 
-is for to indicate system transit to next question without confirmation \\
-    \hline
-  Value & 0,1 & Is the value obtained for current question \\
-  \hline
-  Grammar & 0,1 & What type of ASR grammar used, restrictive or dictation (non-restrictive) 
-grammar.  \\
-    \hline
-      Auxiliary & 0,1,2 & Multiple purpose attribute. Use to indicate number of ReAsks and semantic 
-valence of the received answer. If it is 0, it indicates, it is not used in that state.  \\
-        \hline
+\begin{tabular}{ | p{14mm} | p{11mm} | p{48mm} | } \hline
+    \textbf{Feature} & \textbf{Domain} & \textbf{Description} \\ \hline
+    Greeting   & 0,1              & Whether the system has greeted the user. \\ \hline
+    Question   & 1,2,3,4          & Which question is being queried.\\ \hline
+    Confidence & 0,1,2,3, 4,5,6 & 0,1,2 for low, medium, and high confidence of speech recognizer. 3,4 for
+                                  confirmed or not confirmed. 5 to indicate system is waiting for confirmation. 
+                                  6 is for to indicate system transit to next question without confirmation.\\ \hline
+    Value      & 0,1            & Is the value obtained for current question.\\ \hline
+    Grammar    & 0,1            & What type of ASR grammar used, restrictive or dictation (non-restrictive) 
+                                  grammar.  \\ \hline
+    Auxiliary  & 0,1,2          & Multiple purpose attribute. Use to indicate number of ReAsks and semantic 
+                                  valence of the received answer. If it is 0, it indicates, it is not used in 
+                                  that state.  \\ \hline
 \end{tabular}
 \end{table}
 
@@ -340,13 +343,9 @@ Participants sat in front of a PC computer running the systems (some the trainin
 It is important to note that we did {\em not} perform any user training nor speaker adaptation for speech recognition. 
 
 After obtaining an oral consent approved by the University Internal Review Board, we gave the following instructions to each subject before using the system for both experiments:
-\vspace{-0 mm}
 \begin{compactitem}
 \item You will be asked questions about your drinking behavior with an avatar/virtual character.  You may or may not have any alcohol related problems, but we just want you to role-play a person who is having drinking-related problems and give relevant answers to each question.
-%\footnote{Because alcohol usage is a very common and universal social problem that everyone understands, students' answers were relevant.  We would not necessarily had collected meaningful answers had we asked students, for example, to imagine having some complex disorder such as schizophrenia, because most people do not know what behaviors are associated with this condition.  Consuming alcohol in different quantities however, is an experience that many people can relate to, and therefore the answers that we collected were all very relevant.\\}.
-\vspace{-0 mm}
 \item Try to speak clearly and loudly enough.
-\vspace{-0 mm}
 \item Wait until the avatar stops speaking before you answer.
 \end{compactitem} 
 
@@ -369,7 +368,7 @@ We show the improvement of Q-values for each episode in Figure \ref{q-values}. W
 
 In the first part, we asked questions about reuse ``Would you use the system in future?", and ease of use ``Is the system easy to use and is it easy to understand how to use the system?", and ``Did the system understood what you said" and ``Did you know what to say to the system in each turn".
 
-Our evaluation of the subjective aspects 
+Our evaluation of the subjective aspects  
 %shown in Figure \ref{yesNoEva} 
 demonstrated that acceptability of the system by users is very high in terms of {\em Ease of Use} (81 yes / 8 no), and {\em Intention to Reuse} (63 yes / 26 no)
 % DISCUSS ACTUAL NUMBERS, ADD UNIT IN FIGURE FOR Y AXIS, SAME FOR OTHER FIG BY THE WAY)
