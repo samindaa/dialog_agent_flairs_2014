@@ -229,7 +229,7 @@ Therefore, the dialog agent uses a total of 578 states to represent the states o
 state is associated with 2 actions based on initiative and  confirmation types. The reward 
 function is designed to complete each RL problem with the minimum possible number of steps (see \cite{YASCLL14} for details).  
 
-A rich dialog corpus was used during the learning process. The corpus is organized turn by 
+A rich dialog corpus that we collected was used during the learning process. The corpus is organized turn by 
 turn. Each turn element contains: stage and state information, question asked by the system,  
 initiative type,  best speech recognition, grammar type, semantic value or result of the semantic 
 parser, N-best recognitions with confidence score, reward gained from the question, cumulative 
@@ -331,9 +331,11 @@ joint requests and 30 Hz for both cameras.
 
 Evaluating dialog systems requires two types of evaluation: 1) {\em objective evaluation} of the system performance per se (e.g. task metrics such as task completion, and dialog metrics such average length of the dialog); and 2) {\em subjective evaluation} of the user's experience (e.g. ease of use of the system, intention to reuse the system).
 
-Because the only difference between the current robot-based dialog system and the 3D character-based dialog system \cite{YASCLL14} is that the former uses the Google speech recognition whereas the latter uses the Microsoft speech recognition engine, the results of performance of the dialog system (when it is delivered by the 3D virtual character) provide an indication of what can be expected of the performance of the same dialog system when it is delivered by the NAO.  As discussed in the Future Research Section, our next step will be to use the exact same procedure as the one described below, to evaluate the robot-based dialog intervention.
+Because the only difference between the current robot-based dialog system and the 3D character-based dialog system \cite{YASCLL14} is that the former uses the Google speech recognition whereas the latter uses the Microsoft speech recognition engine, the results of performance of the dialog system (when it is delivered by the 3D virtual character) provide an indication of what can be expected of the performance of the same dialog system when it is delivered by the NAO.  As discussed in the Conclusion and Future Work Section, our next step will be to use the exact same procedure as the one described below, to evaluate the robot-based dialog intervention.
 
 {\bf Procedure.}  For the evaluation of the system delivered by the 3D virtual character, 89 subjects were recruited from volunteer university students through fliers and emails.  From 89 participants, 62 of them were males and 27 of them were females; 51 of them were native speakers and 38 of them were non-native speakers,   which realistically represents the diversity of the population in the Miami, Florida area.
+
+University students represents a very appropriate sample for target population for brief interventions. The latest report of NIAAA on college drinking indicated that alcohol problems are very prevalent among college students \cite{NIAAA2007colleges}, and 19\% of college students (ages 18-24) meet the criteria for alcohol abuse or dependence\footnote{From the Diagnostic and Statistical Manual of Mental Disorders, Fourth Edition (DSM–IV), American Psychiatric Association.}. The use of brief interventions with college students to educate students about drinking and  increase their awareness is very common \cite{NIAAA2007colleges}. As a result of many studies, the NIAAA report on college drinking emphasized that ``increased alcohol screening and brief interventions are feasible  and appropriate for identifying and addressing harmful drinking among college students". 
 
 Participants sat in front of a PC computer running the systems (some the training system and some the testing system as described below), and responded in English to the questions asked by the embodied conversational agent.  The computer was equipped with a USB sound card and a Sennheiser ME 3-ew microphone.
 
@@ -342,15 +344,20 @@ It is important to note that we did {\em not} perform any user training nor spea
 After obtaining an oral consent approved by the University Internal Review Board, we gave the following instructions to each subject before using the system for both experiments:
 \vspace{-0 mm}
 \begin{compactitem}
-\item You will be asked questions about your drinking behavior with an avatar/virtual character.  You may or may not have any alcohol related problems, but we just want you to role-play a person who is having drinking-related problems and give relevant answers to each question\footnote{Because alcohol usage is a very common and universal social problem that everyone understands, users' answers were relevant.  Once can note that we would not necessarily had collected meaningful answers had we asked MT users, for example, to imagine having some complex disorder such as schizophrenia, because most people do not know what behaviors are associated with this condition.  Consuming alcohol in different quantities however, is an experience that many people can relate to, and therefore the answers that we collected were very relevant.}.
+\item You will be asked questions about your drinking behavior with an avatar/virtual character.  You may or may not have any alcohol related problems, but we just want you to role-play a person who is having drinking-related problems and give relevant answers to each question.
+%\footnote{Because alcohol usage is a very common and universal social problem that everyone understands, students' answers were relevant.  We would not necessarily had collected meaningful answers had we asked students, for example, to imagine having some complex disorder such as schizophrenia, because most people do not know what behaviors are associated with this condition.  Consuming alcohol in different quantities however, is an experience that many people can relate to, and therefore the answers that we collected were all very relevant.\\}.
 \vspace{-0 mm}
 \item Try to speak clearly and loudly enough.
 \vspace{-0 mm}
-\item Wait until the avatar stops speaking before you answer.
+\item Wait until the avatar stops speaking before you answer.\\
 \end{compactitem} 
 
+
 {\bf Objective Evaluation.}  
-As shown in Figure \ref{q-values}, we compared Q-values for each episode. An episode can be defined as completing one question and passing to the next question. It is important to note that completion of one question does not mean that the system obtained the information it was trying to get. As discussed earlier, it is possible for the system to transit to the next question without having obtained the information, and in that case, the system receives negative reward. 
+
+SAM: CAN YOU EXPLAIN BRIEFLY HOW Q-VALUES ARE ABLE TO SUMMARIZE THE RESULTS NICELY?
+
+As shown in Figure \ref{q-values}, we compared Q-values for each episode. An episode can be defined as completing one question and passing to the next question. It is important to note that completion of one question does not mean that the system obtained the information it was trying to get. As discussed earlier, DID WE REALLY DISCSS THIS EARLIER?, it is possible for the system to transit to the next question without having obtained the information, and in that case, the system receives negative reward. 
 %We described the details of the reward function in Section \ref{Reward}. 
 We show the improvement of Q-values for each episode in Figure \ref{q-values}. We have  21 episodes because we have 18 questions, plus transitions between MDPs. As shown in Figure \ref{q-values}, the optimized policy performed better, even though it is not optimal. We have to note that \textit{optimal policy} represents the highest reward that the system can achieve, whereas the \textit{random policy} and the \textit{optimized policy} represent the average score that the system collected in training and testing operation modes, respectively.
 
@@ -362,16 +369,35 @@ We show the improvement of Q-values for each episode in Figure \ref{q-values}. W
  \end{figure}
 
 
-{\bf Subjective Evaluation}. 
+{\bf Subjective Evaluation}. After the subjects completed the intervention, the subjects answered a survey aimed at evaluating the user's experience with the system. The survey has two parts, the first part has 4 yes/no questions and the second part is a 34-item questionnaire about the subject's assessment and experience with the system. 
 
-\section*{Conclusions} 
+In the first part, we asked questions about reuse ``Would you use the system in future?", and ease of use ``Is the system easy to use and is it easy to understand how to use the system?", and ``Did the system understood what you said" and ``Did you know what to say to the system in each turn".
 
-Although currently at the prototype stage, we anticipate that the NAO robot will become a very 
-likable and effective mode of delivery for brief interventions for target behaviors such as poor 
-diet, overeating, or lack of exercise, among others.  The appeal of the NAO to children 
+Our evaluation of the subjective aspects shown in Figure \ref{yesNoEva} demonstrates that acceptability of the system by users is very high in terms of {\em Ease of Use} (81 yes / 8 no) and {\em Intention to Reuse} (63 yes / 26 no)
+% DISCUSS ACTUAL NUMBERS, ADD UNIT IN FIGURE FOR Y AXIS, SAME FOR OTHER FIG BY THE WAY)
+% NOT CLEAR HOW INTENTION TO REUSE WAS EVALUATED THOUGH, WHAT QUESTION(S)?
+the system. The answers to {\em What to say to system?} show that sometimes users do not know how to answer the system questions: it might be that when in user initiative mode, i.e. asking open questions, users may not be sure to what extend they can provide details. This suggests the need for the agent to brief the user accordingly.
+% DISCUSS: WHY DO YOU THINK THAT IS?  THE QUESTIONS WERE PRETTY SIMPLE, WHY DIDN'T THEY KNOW HOW TO ANSWER?
+The {\em System understood} criteria shows that most of the users think that the system understood what they said, which we explain by the system ample use of confirmation questions when it is unsure it understood. 
+
+ \begin{figure}
+ \centering
+ \includegraphics[width=\columnwidth]{figures/subjective.png}
+ \caption{Subjective Evaluation}
+ \label{yesNoEva}
+ \end{figure}
+ 
+%In the second part of the subjective assessment, we used a 34-item questionnaire named {\em Subjective Assessment of System Speech Interfaces (SASSI)} \cite{SASSI}. It is a widely used evaluation questionnaire in the SDS community. The subjects answered a randomized list of SASSI questionnaire on a 7-point Likert scale. The SASSI questionnaire queries 6 aspects of the user's assessment and experience with the system.  These aspects are \textit{Accuracy}, \textit{Likeability}, \textit{Cognitive Demand}, \textit{Annoyance}, \textit{Habitability}, and \textit{Speed} of the system. 
+
+\section*{Conclusion and Future Work} 
+
+We have implemented a computerized spoken brief intervention that can be delivered by a speech-enabled 3D virtual character and a NAO robot.  We anticipate that the positive results of the speech-enabled 3D character delivering the intervention will be reproduced when we next evaluate the NAO delivering the intervention.
+
+Furthermore, brief interventions have a single and simple structure that can be adapted to a variety of target behaviors, such as poor diet, overeating, or lack of exercise, among others.
+The appeal of the NAO to children 
 \cite{belpaeme2012multimodal} makes it particularly suitable to become a child's favorite health 
-coach, say, to discuss eating more fruits and vegetables on a daily basis. Our platform 
-provides the additional advantages such the ability to physically demonstrate physical exercises, when the target behavior of the brief intervention is lack of exercise.
+coach, say, to discuss eating more fruits and vegetables on a daily basis. Our NAO platform 
+provides additional advantages such the ability to physically demonstrate physical exercises, when the target behavior of the brief intervention is lack of exercise.
 
 \bibliographystyle{aaai}       
 \bibliography{library}   
