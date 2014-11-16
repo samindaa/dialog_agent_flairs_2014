@@ -347,6 +347,13 @@ After obtaining an oral consent approved by the University Internal Review Board
 \item Try to speak clearly and loudly enough.
 \item Wait until the avatar stops speaking before you answer.\\
 \end{compactitem} 
+ \begin{figure}
+ \centering
+ \includegraphics[width=\columnwidth]{figures/q-values.pdf}
+ \caption{Q-values for each episode, the X-axis shows the number of episodes and the Y-axis shows the log-scale Q-values.}
+ \label{q-values}
+ \end{figure}
+
 
 
 {\bf Objective Evaluation.}  
@@ -354,13 +361,6 @@ After obtaining an oral consent approved by the University Internal Review Board
 As shown in Figure \ref{q-values}, we compared Q-values for each episode. An episode can be defined as completing one question and passing to the next question. It is important to note that completion of one question does not mean that the system obtained the information it was trying to get. It is possible for the system to transit to the next question without having obtained the information, and in that case, the system receives negative reward. 
 %We described the details of the reward function in Section \ref{Reward}. 
 We show the improvement of Q-values for each episode in Figure \ref{q-values}. We have  21 episodes because we have 18 questions, plus transitions between MDPs. As shown in Figure \ref{q-values}, the optimized policy performed better, even though it is not optimal. We have to note that \textit{optimal policy} represents the highest reward that the system can achieve, whereas the \textit{random policy} and the \textit{optimized policy} represent the average score that the system collected in training and testing operation modes, respectively.\\
-
- \begin{figure}
- \centering
- \includegraphics[width=\columnwidth]{figures/q-values.pdf}
- \caption{Q-values for each episode, the X-axis shows the number of episodes and the Y-axis shows the log-scale Q-values.}
- \label{q-values}
- \end{figure}
 
 
 {\bf Subjective Evaluation}. After the subjects completed the intervention, the subjects answered a survey aimed at evaluating the user's experience with the system. 
