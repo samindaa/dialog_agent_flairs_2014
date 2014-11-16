@@ -357,12 +357,10 @@ After obtaining an oral consent approved by the University Internal Review Board
 
 
 {\bf Objective Evaluation.}  
-
-SAM: CAN YOU EXPLAIN BRIEFLY HOW Q-VALUES ARE ABLE TO SUMMARIZE THE RESULTS NICELY?
-
-As shown in Figure \ref{q-values}, we compared Q-values for each episode. An episode can be defined as completing one question and passing to the next question. It is important to note that completion of one question does not mean that the system obtained the information it was trying to get. As discussed earlier, DID WE REALLY DISCSS THIS EARLIER?, it is possible for the system to transit to the next question without having obtained the information, and in that case, the system receives negative reward. 
+%SAM: CAN YOU EXPLAIN BRIEFLY HOW Q-VALUES ARE ABLE TO SUMMARIZE THE RESULTS NICELY?
+As shown in Figure \ref{q-values}, we compared Q-values for each episode. An episode can be defined as completing one question and passing to the next question. It is important to note that completion of one question does not mean that the system obtained the information it was trying to get. It is possible for the system to transit to the next question without having obtained the information, and in that case, the system receives negative reward. 
 %We described the details of the reward function in Section \ref{Reward}. 
-We show the improvement of Q-values for each episode in Figure \ref{q-values}. We have  21 episodes because we have 18 questions, plus transitions between MDPs. As shown in Figure \ref{q-values}, the optimized policy performed better, even though it is not optimal. We have to note that \textit{optimal policy} represents the highest reward that the system can achieve, whereas the \textit{random policy} and the \textit{optimized policy} represent the average score that the system collected in training and testing operation modes, respectively.
+We show the improvement of Q-values for each episode in Figure \ref{q-values}. We have  21 episodes because we have 18 questions, plus transitions between MDPs. As shown in Figure \ref{q-values}, the optimized policy performed better, even though it is not optimal. We have to note that \textit{optimal policy} represents the highest reward that the system can achieve, whereas the \textit{random policy} and the \textit{optimized policy} represent the average score that the system collected in training and testing operation modes, respectively.\\
 
  \begin{figure}
  \centering
@@ -376,19 +374,21 @@ We show the improvement of Q-values for each episode in Figure \ref{q-values}. W
 
 In the first part, we asked questions about reuse ``Would you use the system in future?", and ease of use ``Is the system easy to use and is it easy to understand how to use the system?", and ``Did the system understood what you said" and ``Did you know what to say to the system in each turn".
 
-Our evaluation of the subjective aspects shown in Figure \ref{yesNoEva} demonstrates that acceptability of the system by users is very high in terms of {\em Ease of Use} (81 yes / 8 no) and {\em Intention to Reuse} (63 yes / 26 no)
+Our evaluation of the subjective aspects 
+%shown in Figure \ref{yesNoEva} 
+demonstrated that acceptability of the system by users is very high in terms of {\em Ease of Use} (81 yes / 8 no), and {\em Intention to Reuse} (63 yes / 26 no)
 % DISCUSS ACTUAL NUMBERS, ADD UNIT IN FIGURE FOR Y AXIS, SAME FOR OTHER FIG BY THE WAY)
 % NOT CLEAR HOW INTENTION TO REUSE WAS EVALUATED THOUGH, WHAT QUESTION(S)?
-the system. The answers to {\em What to say to system?} show that sometimes users do not know how to answer the system questions: it might be that when in user initiative mode, i.e. asking open questions, users may not be sure to what extend they can provide details. This suggests the need for the agent to brief the user accordingly.
+the system. The answers to {\em What to say to system?} revealed that sometimes users do not know how to answer the system questions: it might be that when in user initiative mode, i.e. asking open questions, users may not be sure to what extend they can provide details. This suggests the need for the agent to initially brief the user about its language understanding abilities.
 % DISCUSS: WHY DO YOU THINK THAT IS?  THE QUESTIONS WERE PRETTY SIMPLE, WHY DIDN'T THEY KNOW HOW TO ANSWER?
-The {\em System understood} criteria shows that most of the users think that the system understood what they said, which we explain by the system ample use of confirmation questions when it is unsure it understood. 
+The {\em System understood} criterion indicated that most of the users think that the system understood what they said, which we explain by the system ample use of confirmation questions when it is unsure it understood. 
 
- \begin{figure}
- \centering
- \includegraphics[width=\columnwidth]{figures/subjective.png}
- \caption{Subjective Evaluation}
- \label{yesNoEva}
- \end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[width=\columnwidth]{figures/subjective.png}
+% \caption{Subjective Evaluation}
+% \label{yesNoEva}
+% \end{figure}
  
 %In the second part of the subjective assessment, we used a 34-item questionnaire named {\em Subjective Assessment of System Speech Interfaces (SASSI)} \cite{SASSI}. It is a widely used evaluation questionnaire in the SDS community. The subjects answered a randomized list of SASSI questionnaire on a 7-point Likert scale. The SASSI questionnaire queries 6 aspects of the user's assessment and experience with the system.  These aspects are \textit{Accuracy}, \textit{Likeability}, \textit{Cognitive Demand}, \textit{Annoyance}, \textit{Habitability}, and \textit{Speed} of the system. 
 
