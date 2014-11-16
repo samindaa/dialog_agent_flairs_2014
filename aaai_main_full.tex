@@ -32,6 +32,7 @@
 
 
  \begin{document}
+ \begin{sloppy}
 % The file aaai.sty is the style file for AAAI Press 
 % proceedings, working notes, and technical reports.
 %
@@ -112,13 +113,14 @@ hand-crafted methods \cite{morbiniFlores2012,Bickmore2010}.
 In this article, we discuss a new mode of delivery - a spoken dialog system coupled with a NAO robot - 
 for health interventions that can help people adopt healthy lifestyles.  The dialog system can 
 deliver brief health interventions (BI), which are short, well structured, one-on-one counseling 
-sessions, focused on specific aspects of problematic lifestyle behavior (e.g. overeating, poor diet, 
+sessions, focused on specific aspects of problematic lifestyle behavior (e.g., overeating, poor 
+diet, 
 heavy drinking). BIs, which are top ranked out of 87 treatment styles in terms of efficiency 
 \cite{miller2002mesa} and which can be delivered in 3-5 minutes \cite{Moyer2002}, assess a person's 
 problem behavior, and provide advice about ways to eliminate it. 
 
 
-\section*{Approach}
+\section{Approach}
 
 In this section, we briefly discuss the approach used to develop the dialog 
 agent (see \cite{YASCLL14} for more details). According to the 
@@ -136,11 +138,12 @@ problems can be delivered in three sequential steps (Figure
 \item {\em Advising} and assisting the patient according to the degree of alcohol problems which leads to: 
   \begin{inparaenum} 
     \item advice for {\em at-risk} drinkers; 
-    \item and advice for drinkers with alcohol use {\em disorder} (e.g. coordinate care with specialist).
+    \item and advice for drinkers with alcohol use {\em disorder} (e.g., coordinate care with 
+specialist).
   \end{inparaenum} 
 \end{inparaenum}
 
-\subsection*{Dialog Structure for Brief Interventions}
+\subsection{Dialog Structure for Brief Interventions}
 
 The development of our brief intervention content is based on the guide provided by 
 NIAAA \cite{national2006niaaa}. The goal of the dialog agent is to deliver alcohol screening and 
@@ -175,7 +178,7 @@ questions in a complete session.
 \label{fig:dialog_manager} 
 \end{figure}
 
-\subsection*{Dialog Agent with Reinforcement Learning}
+\subsection{Dialog Agent with Reinforcement Learning}
 
 The goal of the dialog system is to find a (near-) optimal policy that guides the user to an advice 
 or a treatment appropriate to the user's alcohol use (the grey boxes in Figure \ref{fig:dialog_manager}) in an efficient manner. 
@@ -226,7 +229,8 @@ A {\em state} is described with 5 features with discrete values (shown in Table
 question is mapped to a possible state. According to our definitions, each question will produce 34 
 potential states (some associated states per question have been pruned due to non-reachability). 
 Therefore, the dialog agent uses a total of 578 states to represent the states of the environment. Each 
-state is associated with 2 actions based on initiative and  confirmation types. The reward 
+state is associated with 2 {\em actions} based on initiative and  confirmation types. The 
+{\em reward} 
 function is designed to complete each RL problem with the minimum possible number of steps (see \cite{YASCLL14} for details).  
 
 A {\bf rich dialog corpus} that we collected was used during the learning process. The corpus is organized turn by 
@@ -275,7 +279,7 @@ Good bye and let's talk again in 3 months! \\
 \end{table}
 
 
-\section*{Implementation} 
+\section{Implementation} 
 
 Our implementation is based on two system designs that were 
 invented and developed independently in two different research groups. One  
@@ -293,7 +297,7 @@ learns over time how to address and answer the user.
 \caption{System Architecture: {\em Process 1} is the dialog manager; {\em Process 2} delivers the 
 robot's spoken utterances and the recognized human's utterances; and {\em Process 3} senses the 
 human's non-verbal cues, and controls the robot's motions for appropriate gestures during the 
-robot's speech and listening time (e.g. tracks user's face and, if user moves, moves to maintain 
+robot's speech and listening time (e.g., tracks user's face and, if user moves, moves to maintain 
 facing position.)} 
 \label{fig:system} 
 \end{figure}
@@ -327,9 +331,12 @@ robot then uses Google speech API, turns the audio signal into text and sends it
 manager. {\em Process 3} is responsible for coordinating the robot's gestures with its spoken utterances, and uses face tracking to physically follow the user.  The timing between Processes 1 and 2 are based on turns, whereas Process 3 runs with 100 Hz for the 
 joint requests and 30 Hz for both cameras.
 
-\section*{Dialog System Evaluation}
+\section{Dialog System Evaluation}
 
-Evaluating dialog systems requires two types of evaluation: 1) {\em objective evaluation} of the system performance per se (e.g. task metrics such as task completion, and dialog metrics such average length of the dialog); and 2) {\em subjective evaluation} of the user's experience (e.g. ease of use of the system, intention to reuse the system).
+Evaluating dialog systems requires two types of evaluation: 1) {\em objective evaluation} of the 
+system performance per se (e.g., task metrics such as task completion, and dialog metrics such 
+average length of the dialog); and 2) {\em subjective evaluation} of the user's experience (e.g., 
+ease of use of the system, intention to reuse the system).
 
 Because the only difference between the current robot-based dialog system and the 3D character-based dialog system \cite{YASCLL14} is that the former uses the Google speech recognition whereas the latter uses the Microsoft speech recognition engine, the results of performance of the dialog system (when it is delivered by the 3D virtual character) provide an indication of what can be expected of the performance of the same dialog system when it is delivered by the NAO.  As discussed in the Conclusion and Future Work Section, our next step will be to use the exact same procedure as the one described below, to evaluate the robot-based dialog intervention.
 
@@ -387,7 +394,7 @@ The {\em System understood} criterion indicated that most of the users think tha
  
 %In the second part of the subjective assessment, we used a 34-item questionnaire named {\em Subjective Assessment of System Speech Interfaces (SASSI)} \cite{SASSI}. It is a widely used evaluation questionnaire in the SDS community. The subjects answered a randomized list of SASSI questionnaire on a 7-point Likert scale. The SASSI questionnaire queries 6 aspects of the user's assessment and experience with the system.  These aspects are \textit{Accuracy}, \textit{Likeability}, \textit{Cognitive Demand}, \textit{Annoyance}, \textit{Habitability}, and \textit{Speed} of the system. 
 
-\section*{Conclusion and Future Work} 
+\section{Conclusion and Future Work} 
 
 We have implemented a computerized brief intervention that can be delivered by a speech-enabled 3D virtual character and a NAO robot.  We anticipate that the positive results of the speech-enabled 3D character delivering the intervention will be reproduced when we next evaluate the NAO delivering the intervention.
 
@@ -400,5 +407,5 @@ provides additional advantages such the ability to physically demonstrate physic
 \bibliographystyle{aaai}       
 \bibliography{library}   
 
-
+\end{sloppy}
 \end{document}
