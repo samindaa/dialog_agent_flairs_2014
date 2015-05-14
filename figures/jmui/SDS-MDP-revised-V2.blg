@@ -1,0 +1,98 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: SDS-MDP-revised-V2.aux
+The style file: plain.bst
+Database file #1: library.bib
+Repeated entry---line 3880 of file library.bib
+ : @article{Bickmore2005
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5787 of file library.bib
+ : @article{Bickmore2005
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5883 of file library.bib
+ : @article{Bickmore2005
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 8934 of file library.bib
+ : @article{Bickmore2005
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 9814 of file library.bib
+ : @inproceedings{Schulman2011
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 11224 of file library.bib
+ : @article{Hester2005
+ :                    ,
+I'm skipping whatever remains of this entry
+"}" immediately follows an entry type---line 11232 of file library.bib
+ : publisher = {Research Division, Behavior Therapy Associates, LLP, Albuquerque, NM 87112, USA. reidhester@behaviortherapy.com
+ :                                                                                                                             },
+I'm skipping whatever remains of this entry
+Repeated entry---line 15327 of file library.bib
+ : @techreport{Hester2005
+ :                       ,
+I'm skipping whatever remains of this entry
+"}" immediately follows an entry type---line 15331 of file library.bib
+ : institution = {Research Division, Behavior Therapy Associates, LLP, Albuquerque, NM 87112, USA. reidhester@behaviortherapy.com
+ :                                                                                                                               },
+I'm skipping whatever remains of this entry
+"}" immediately follows an entry type---line 15336 of file library.bib
+ : publisher = {Research Division, Behavior Therapy Associates, LLP, Albuquerque, NM 87112, USA. reidhester@behaviortherapy.com
+ :                                                                                                                             },
+I'm skipping whatever remains of this entry
+Repeated entry---line 17589 of file library.bib
+ : @article{DeRosis2006
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 17932 of file library.bib
+ : @article{DeRosis2006
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 18373 of file library.bib
+ : @article{Bickmore2005
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 19912 of file library.bib
+ : @article{Turunen2011
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 20154 of file library.bib
+ : @inproceedings{Schulman2011
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 20676 of file library.bib
+ : @article{Turunen2011
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 21290 of file library.bib
+ : @article{Portnoy2008
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 21869 of file library.bib
+ : @article{Hester2005
+ :                    ,
+I'm skipping whatever remains of this entry
+"}" immediately follows an entry type---line 21877 of file library.bib
+ : publisher = {Research Division, Behavior Therapy Associates, LLP, Albuquerque, NM 87112, USA. reidhester@behaviortherapy.com
+ :                                                                                                                             },
+I'm skipping whatever remains of this entry
+Repeated entry---line 22694 of file library.bib
+ : @article{Bickmore2005
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 23981 of file library.bib
+ : @article{young2010POMDP
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 24800 of file library.bib
+ : @article{Portnoy2008
+ :                     ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in babor1992
+Warning--empty journal in humeniuk2010assist
+Warning--empty publisher in national2007helping
+Warning--can't use both volume and number fields in sutton1998reinforcement
+Warning--can't use both author and editor fields in Traum03
+Warning--empty journal in young2013pomdp
+(There were 22 error messages)

@@ -1,0 +1,376 @@
+\begin{thebibliography}{10}
+
+\bibitem{Mokdad2004Death}
+Mokdad AH, Marks JS, Stroup DF, and Gerberding JL.
+\newblock Actual causes of death in the united states, 2000.
+\newblock {\em JAMA}, 291(10):1238--1245, 2004.
+
+\bibitem{babor1992}
+Thomas~F Babor and Marcus Grant.
+\newblock Programme on substance abuse : project on identification and
+  management of alcohol-related problems. report on phase ii, an randomized
+  clinical trial of brief interventions in primary health care.
+\newblock 1992.
+
+\bibitem{Bickmore2010}
+Timothy Bickmore and Amanda Gruber.
+\newblock {Relational agents in clinical psychiatry.}
+\newblock {\em Harvard review of psychiatry}, 18(2):119--30, March 2010.
+
+\bibitem{Bickmore2010a}
+Timothy~W. Bickmore, Kathryn Puskar, Elizabeth~a. Schlenk, Laura~M. Pfeifer,
+  and Susan~M. Sereika.
+\newblock {Maintaining reality: Relational agents for antipsychotic medication
+  adherence}.
+\newblock {\em Interacting with Computers}, 22(4):276--288, July 2010.
+
+\bibitem{Bickmore2011}
+Timothy~W Bickmore, Daniel Schulman, and Candace~L Sidner.
+\newblock {A reusable framework for health counseling dialogue systems based on
+  a behavioral medicine ontology.}
+\newblock {\em Journal of biomedical informatics}, 44(2):183--97, April 2011.
+
+\bibitem{Bickmore2005}
+T.W. Bickmore.
+\newblock {Establishing and maintaining long-term human-computer
+  relationships}.
+\newblock {\em ACM Transactions on Computer-Human}, 12(2):293--327, 2005.
+
+\bibitem{Bohus2009}
+Dan Bohus and Alexander~I. Rudnicky.
+\newblock The ravenclaw dialog management framework: Architecture and systems.
+\newblock {\em Computer Speech \& Language}, 23(3):332 -- 361, 2009.
+
+\bibitem{Bouchery2011}
+Ellen~E. Bouchery, Henrick~J. Harwood, Jeffrey~J. Sacks, Carol~J. Simon, and
+  Robert~D. Brewer.
+\newblock Economic costs of excessive alcohol consumption in the u.s., 2006.
+\newblock {\em American Journal of Preventive Medicine}, 41(5):516 -- 524,
+  2011.
+
+\bibitem{Chandramohan2010}
+Senthilkumar Chandramohan, Matthieu Geist, and Olivier Pietquin.
+\newblock Sparse approximate dynamic programming for dialog management.
+\newblock In {\em Proceedings of the 11th Annual Meeting of the Special
+  Interest Group on Discourse and Dialogue}, SIGDIAL '10, pages 107--115,
+  Stroudsburg, PA, USA, 2010. Association for Computational Linguistics.
+
+\bibitem{chi2010micro}
+Min Chi, Kurt VanLehn, and Diane Litman.
+\newblock Do micro-level tutorial decisions matter: Applying reinforcement
+  learning to induce pedagogical tutorial tactics.
+\newblock In {\em Intelligent Tutoring Systems}, pages 224--234. Springer,
+  2010.
+
+\bibitem{DeRosis2006}
+Fiorella de~Rosis, Nicole Novielli, Valeria Carofiglio, Addolorata Cavalluzzi,
+  and Berardina {De Carolis}.
+\newblock {User modeling and adaptation in health promotion dialogs with an
+  animated character.}, October 2006.
+
+\bibitem{ferguson1998trips}
+G.~Ferguson, J.F. Allen, et~al.
+\newblock Trips: An integrated intelligent problem-solving assistant.
+\newblock In {\em Proceedings of the National Conference on Artificial
+  Intelligence}, pages 567--573. JOHN WILEY \& SONS LTD, 1998.
+
+\bibitem{Ferguson2010}
+G~Ferguson, J~Quinn, C~Horwitz, M~Swift, J~Allen, and L~Galescu.
+\newblock {Towards a Personal Health Management Assistant.}
+\newblock {\em Journal of biomedical informatics}, 43(5 Suppl):S13--6, October
+  2010.
+
+\bibitem{frampton2009}
+Matthew Frampton and Oliver Lemon.
+\newblock Recent research advances in reinforcement learning in spoken dialogue
+  systems.
+\newblock {\em Knowledge Engineering Review}, 24(4):375--408, 2009.
+
+\bibitem{georgila2006user}
+Kallirroi Georgila, James Henderson, and Oliver Lemon.
+\newblock User simulation for spoken dialogue systems: Learning and evaluation.
+\newblock In {\em in Interspeech/ICSLP}, 2006.
+
+\bibitem{Georgila2010}
+Kallirroi Georgila, Maria~K. Wolters, and Johanna~D. Moore.
+\newblock Learning dialogue strategies from older and younger simulated users.
+\newblock In {\em Proceedings of the 11th Annual Meeting of the Special
+  Interest Group on Discourse and Dialogue}, SIGDIAL '10, pages 103--106,
+  Stroudsburg, PA, USA, 2010. Association for Computational Linguistics.
+
+\bibitem{henderson2008hybrid}
+James Henderson, Oliver Lemon, and Kallirroi Georgila.
+\newblock Hybrid reinforcement/supervised learning of dialogue policies from
+  fixed data sets.
+\newblock {\em Computational Linguistics}, 34(4):487--511, 2008.
+
+\bibitem{Hester2005}
+Reid~K Hester, Daniel~D Squires, and Harold~D Delaney.
+\newblock {The Drinker's Check-up: 12-month outcomes of a controlled clinical
+  trial of a stand-alone software program for problem drinkers.}
+\newblock {\em Journal of substance abuse treatment}, 28(2):159--69, March
+  2005.
+
+\bibitem{SASSI}
+Kate~S Hone and Robert Graham.
+\newblock Towards a tool for the subjective assessment of speech system
+  interfaces (sassi).
+\newblock {\em Natural Language Engineering}, 6(3,4):287--303, 2000.
+
+\bibitem{humeniuk2010assist}
+Rachel Humeniuk, S~Henry-Edwards, Robert Ali, Vladimir Poznyak, Maristela~G
+  Monteiro, World~Health Organization, et~al.
+\newblock The assist-linked brief intervention for hazardous and harmful
+  substance use: a manual for use in primary care/prepared by r. humeniukƯ [et
+  al].
+\newblock 2010.
+
+\bibitem{jurvcivcek2012reinforcement}
+Filip Jur{\v{c}}{\'\i}{\v{c}}ek, Blaise Thomson, and Steve Young.
+\newblock Reinforcement learning for parameter estimation in statistical spoken
+  dialogue systems.
+\newblock {\em Computer Speech \& Language}, 26(3):168--192, 2012.
+
+\bibitem{kennedy2012active}
+Catriona~M Kennedy, John Powell, Thomas~H Payne, John Ainsworth, Alan Boyd, and
+  Iain Buchan.
+\newblock Active assistance technology for health-related behavior change: an
+  interdisciplinary review.
+\newblock {\em Journal of Medical Internet Research}, 14(3), 2012.
+
+\bibitem{lemon2007machine}
+Olivier Lemon, Olivier Pietquin, et~al.
+\newblock Machine learning for spoken dialogue systems.
+\newblock In {\em Proceedings of the European Conference on Speech
+  Communication and Technologies (Interspeech'07)}, pages 2685--2688, 2007.
+
+\bibitem{Levin2006Spoken}
+Esther Levin and Alex Levin.
+\newblock Evaluation of spoken dialogue technology for real-time health data
+  collection.
+\newblock {\em J Med Internet Res}, 8(4):e30, Dec 2006.
+
+\bibitem{levin1998}
+Esther Levin, Roberto Pieraccini, and Wieland Eckert.
+\newblock Using markov decision process for learning dialogue strategies.
+\newblock In {\em Acoustics, Speech and Signal Processing, 1998. Proceedings of
+  the 1998 IEEE International Conference on}, volume~1, pages 201--204. IEEE,
+  1998.
+
+\bibitem{liAssistivePomdp2013}
+William Li, Jim Glass, Nicholas Roy, and Seth Teller.
+\newblock Probabilistic dialogue modeling for speech-enabled assistive
+  technology.
+\newblock In {\em Proceedings of the Fourth Workshop on Speech and Language
+  Processing for Assistive Technologies}, pages 67--72, Grenoble, France,
+  August 2013. Association for Computational Linguistics.
+
+\bibitem{lisetti2013}
+Christine Lisetti, Reza Amini, Ugan Yasavur, and Naphtali Rishe.
+\newblock I can help you change! an empathic virtual agent delivers behavior
+  change health interventions.
+\newblock {\em ACM Transactions on Management Information Systems (TMIS)},
+  4(4):19, 2013.
+
+\bibitem{miller2002mesa}
+William~R Miller and Paula~L Wilbourne.
+\newblock Mesa grande: a methodological analysis of clinical trials of
+  treatments for alcohol use disorders.
+\newblock {\em Addiction}, 97(3):265--277, 2002.
+
+\bibitem{misu2012reinforcement}
+Teruhisa Misu, Kallirroi Georgila, Anton Leuski, and David Traum.
+\newblock Reinforcement learning of question-answering dialogue policies for
+  virtual museum guides.
+\newblock In {\em Proceedings of the 13th Annual Meeting of the Special
+  Interest Group on Discourse and Dialogue}, pages 84--93. Association for
+  Computational Linguistics, 2012.
+
+\bibitem{morbiniFlores2012}
+Fabrizio Morbini, David {DeVault}, Kenji Sagae, Jillian Gerten, Angela
+  Nazarian, and David Traum.
+\newblock {FLoReS:} a forward looking, reward seeking, dialogue manager.
+\newblock In {\em 4th International Workshop on Spoken Dialog Systems}, Paris,
+  France, November 2012.
+
+\bibitem{Morbini2012}
+Fabrizio Morbini, Eric Forbell, David DeVault, Kenji Sagae, David~R. Traum, and
+  Albert~A. Rizzo.
+\newblock A mixed-initiative conversational dialogue system for healthcare.
+\newblock In {\em Proceedings of the 13th Annual Meeting of the Special
+  Interest Group on Discourse and Dialogue}, SIGDIAL '12, pages 137--139,
+  Stroudsburg, PA, USA, 2012. Association for Computational Linguistics.
+
+\bibitem{Moyer2002}
+Anne Moyer, John~W. Finney, Carolyn~E. Swearingen, and Pamela Vergun.
+\newblock Brief interventions for alcohol problems: a meta-analytic review of
+  controlled investigations in treatment-seeking and non-treatment-seeking
+  populations.
+\newblock {\em Addiction}, 97(3):279--292, 2002.
+
+\bibitem{national2006niaaa}
+NIAAA.
+\newblock Niaaa alcohol alert no. 66: Brief interventions, 2006.
+
+\bibitem{national2007helping}
+NIAAA.
+\newblock {\em Helping Patients Who Drink Too Much, A Clinician's Guide}.
+\newblock 2007.
+
+\bibitem{NIAAA2007colleges}
+NIAAA.
+\newblock What colleges need to know now: An update on college drinking
+  research, 2007.
+
+\bibitem{paek2008automating}
+Tim Paek and Roberto Pieraccini.
+\newblock Automating spoken dialogue management design using machine learning:
+  An industry perspective.
+\newblock {\em Speech communication}, 50(8):716--729, 2008.
+
+\bibitem{Papangelis2012}
+Alexandros Papangelis, Nikolaos Kouroupas, Vangelis Karkaletsis, and Fillia
+  Makedon.
+\newblock An adaptive dialogue system with online dialogue policy learning.
+\newblock In {\em Proceedings of the 7th Hellenic conference on Artificial
+  Intelligence: theories and applications}, SETN'12, pages 323--330, Berlin,
+  Heidelberg, 2012. Springer-Verlag.
+
+\bibitem{Portnoy2008}
+David~B Portnoy, Lori a~J Scott-Sheldon, Blair~T Johnson, and Michael~P Carey.
+\newblock {Computer-delivered interventions for health promotion and behavioral
+  risk reduction: a meta-analysis of 75 randomized controlled trials,
+  1988-2007.}
+\newblock {\em Preventive medicine}, 47(1):3--16, July 2008.
+
+\bibitem{OnlineAlcoholInterventionRev2011}
+Heleen Riper, Viola Spek, Brigitte Boon, Barbara Conijn, Jeannet Kramer,
+  Katherina Martin-Abello, and Filip Smit.
+\newblock Effectiveness of e-self-help interventions for curbing adult problem
+  drinking: A meta-analysis.
+\newblock {\em J Med Internet Res}, 13(2):e42, Jun 2011.
+
+\bibitem{saitz2007screening}
+Richard Saitz, Tibor~P Palfai, Naomi Freedner, Michael~R Winter, Alexandra
+  Macdonald, John Lu, AL~Ozonoff, David~L Rosenbloom, and William Dejong.
+\newblock Screening and brief intervention online for college students: the
+  ihealth study.
+\newblock {\em Alcohol and Alcoholism}, 42(1):28--36, 2007.
+
+\bibitem{schatzmann2005quantitative}
+Jost Schatzmann, Kallirroi Georgila, and Steve Young.
+\newblock Quantitative evaluation of user simulation techniques for spoken
+  dialogue systems.
+\newblock In {\em 6th SIGdial Workshop on DISCOURSE and DIALOGUE}, 2005.
+
+\bibitem{Schulman2011}
+Daniel Schulman, Timothy~W. Bickmore, and Candace~L Sidner.
+\newblock {An Intelligent Conversational Agent for Promoting Long-Term Health
+  Behavior Change using Motivational Interviewing}.
+\newblock In {\em Association for the Advancement of Artificial Intelligence
+  (AAAI) Spring Symposium Series}, pages 61--64. Association for the
+  Advancement of Artificial Intelligence (www.aaai.org), 2011.
+
+\bibitem{singh2000empirical}
+Satinder Singh, Michael Kearns, Diane~J Litman, Marilyn~A Walker, et~al.
+\newblock Empirical evaluation of a reinforcement learning spoken dialogue
+  system.
+\newblock In {\em AAAI/IAAI}, pages 645--651, 2000.
+
+\bibitem{NjFunSingh02}
+Satinder Singh, Diane Litman, Michael Kearns, and Marilyn Walker.
+\newblock Optimizing dialogue management with reinforcement learning:
+  Experiments with the njfun system.
+\newblock {\em Journal of Artificial Intelligence Research}, 16:105--133, 2002.
+
+\bibitem{steinberg2005brief}
+Karen~L Steinberg, Roger~A Roffman, Kathleen~M Carroll, Bonnie McRee, TF~Babor,
+  M~Miller, R~Kadden, D~Duresky, and R~Stephens.
+\newblock {\em Brief counseling for marijuana dependence: a manual for treating
+  adults}.
+\newblock Center for Substance Abuse Treatment, Substance Abuse and Mental
+  Health Services Administration Rockville, MD, 2005.
+
+\bibitem{sutton1998reinforcement}
+Richard~S Sutton and Andrew~G Barto.
+\newblock {\em Reinforcement learning: An introduction}, volume~1.
+\newblock Cambridge Univ Press, 1998.
+
+\bibitem{sutton1998CSLU}
+S.~Sutton, R.~Cole, J.~De~Villiers, J.~Schalkwyk, P.~Vermeulen, M.~Macon,
+  Y.~Yan, E.~Kaiser, B.~Rundle, K.~Shobaki, et~al.
+\newblock Universal speech tools: The cslu toolkit.
+\newblock In {\em Proceedings of the International Conference on Spoken
+  Language Processing (ICSLP)}, pages 3221--3224. Sydney, Australia., 1998.
+
+\bibitem{Traum03}
+David Traum and Staffan Larsson.
+\newblock {\em {The Information State Approach to Dialogue Management}}, pages
+  325--353.
+\newblock Kluwer Academic Publishers, 2003.
+
+\bibitem{Turunen2011}
+Markku Turunen, Jaakko Hakulinen, Olov St{\aa}hl, Bj{\"o}rn Gamb{\"a}ck, Preben
+  Hansen, Mari~C Rodr{\'\i}guez~Gancedo, Ra{\'u}l~Santos de~la C{\'a}mara,
+  Cameron Smith, Daniel Charlton, and Marc Cavazza.
+\newblock Multimodal and mobile conversational health and fitness companions.
+\newblock {\em Computer Speech \& Language}, 25(2):192--209, 2011.
+
+\bibitem{walters2005demon}
+Scott~T Walters, Reid~K Hester, Emil Chiauzzi, and Elizabeth Miller.
+\newblock Demon rum: High-tech solutions to an age-old problem.
+\newblock {\em Alcoholism: Clinical and Experimental Research}, 29(2):270--277,
+  2005.
+
+\bibitem{walters2005feedback}
+Scott~T Walters and Clayton Neighbors.
+\newblock Feedback interventions for college alcohol misuse: What, why and for
+  whom?
+\newblock {\em Addictive behaviors}, 30(6):1168--1182, 2005.
+
+\bibitem{PhoenixParser1991}
+W.~Ward.
+\newblock Understanding spontaneous speech: the phoenix system.
+\newblock In {\em Proceedings of the Acoustics, Speech, and Signal Processing,
+  1991. ICASSP-91., 1991 International Conference}, ICASSP '91, pages 365--367,
+  Washington, DC, USA, 1991. IEEE Computer Society.
+
+\bibitem{OnlineAlcoholInterventionRev2010}
+Angela White, David Kavanagh, Helen Stallman, Britt Klein, Frances Kay-Lambkin,
+  Judy Proudfoot, Judy Drennan, Jason Connor, Amanda Baker, Emily Hines, and
+  Ross Young.
+\newblock Online alcohol interventions: A systematic review.
+\newblock {\em J Med Internet Res}, 12(5):e62, Dec 2010.
+
+\bibitem{williams2008best}
+Jason~D Williams.
+\newblock The best of both worlds: unifying conventional dialog systems and
+  pomdps.
+\newblock In {\em INTERSPEECH}, pages 1173--1176, 2008.
+
+\bibitem{williams2007partially}
+Jason~D Williams and Steve Young.
+\newblock Partially observable markov decision processes for spoken dialog
+  systems.
+\newblock {\em Computer Speech \& Language}, 21(2):393--422, 2007.
+
+\bibitem{young2013pomdp}
+Steve Young, M~Ga{\v{s}}i{\'c}, Blaise Thomson, and JD~Williams.
+\newblock Pomdp-based statistical spoken dialog systems: A review.
+\newblock 2013.
+
+\bibitem{young2010POMDP}
+Steve Young, Milica Ga{\v{s}}i{\'c}, Simon Keizer, Fran{\c{c}}ois Mairesse,
+  Jost Schatzmann, Blaise Thomson, and Kai Yu.
+\newblock The hidden information state model: A practical framework for
+  pomdp-based spoken dialogue management.
+\newblock {\em Computer Speech \& Language}, 24(2):150--174, 2010.
+
+\bibitem{young2010hidden}
+Steve Young, Milica Ga{\v{s}}i{\'c}, Simon Keizer, Fran{\c{c}}ois Mairesse,
+  Jost Schatzmann, Blaise Thomson, and Kai Yu.
+\newblock The hidden information state model: A practical framework for
+  pomdp-based spoken dialogue management.
+\newblock {\em Computer Speech \& Language}, 24(2):150--174, 2010.
+
+\end{thebibliography}
